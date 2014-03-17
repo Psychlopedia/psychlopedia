@@ -1,0 +1,5 @@
+<%- if @experiences -%>
+  <% @experiences.each do |experience| -%>
+    <li><%= link_to experience.title || '<no title>', experience_path(experience) %></li>
+  <%- end -%>
+<%- end %>

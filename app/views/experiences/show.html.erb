@@ -1,0 +1,9 @@
+<%- if @experience -%>
+  <div>
+    <h1><%= @experience.title || '<no title>' -%></h1>
+    <h3><%= @experience.pseudonym || 'anonymous' -%> @ <%= @experience.created_at.to_formatted_s(:long) %></h3>
+    <div>
+      <%= @experience.body -%>
+    </div>
+  </div>
+<%- end -%>

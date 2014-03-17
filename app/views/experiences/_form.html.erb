@@ -1,0 +1,58 @@
+<%= form_for(@experience) do |f| %>
+  <% if @experience.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@experience.errors.count, "error") %> prohibited this experience from being saved:</h2>
+
+      <ul>
+      <% @experience.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label 'Pseudónimo (opcional)' %><br>
+    <%= f.text_field :pseudonym %>
+  </div>
+  <div class="field">
+    <%= f.label 'Título (opcional)' %><br>
+    <%= f.text_field :title %>
+  </div>
+  <div class="field">
+    <%= f.label 'Contá tu experiencia' %><br>
+    <%= f.text_area :body, cols: 40, rows: 20 %>
+  </div>
+  <div class="field">
+    <%= gotcha_error %>
+    <%= gotcha %>
+  </div>
+  <div class="actions">
+    <%= f.submit 'Guardar experiencia' %>
+  </div>
+  
+  <p class="markdown_information">
+    Podés usar formato básico en tus experiencias.
+    <br>
+    <br>
+    Presionar <Enter> se entenderá como una nueva línea.
+    Los asteriscos proveerán *énfasis* y **negritas**.
+    <br>
+    <br>
+    Para varias el tamaño del texto usá numerales al principio
+    de cada línea, así:
+    <br>
+    <br>
+    # Uno para el tamaño máximo
+    <br>
+    <br>
+    ## Dos para un tamaño inferior
+    <br>
+    <br>
+    ### Tres para un tamaño aún más pequeño...
+    <br>
+    <br>
+    Este lenguaje de formato se llama MarkDown.
+    Podés <%= link_to 'leer más al respecto acá', 'http://daringfireball.net/projects/markdown/syntax' -%>.
+  </p>
+<% end %>

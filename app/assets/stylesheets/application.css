@@ -1,0 +1,235 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the top of the
+ * compiled file, but it's generally better to create a new file per style scope.
+ *
+ *= require_self
+ *= require_tree .
+ */
+
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/**
+  So here are the styles so far. Excuse my poor understanding of CSS.
+*/
+
+body {
+  font-family: Helvetica, Lucida Console, monospace;
+  font-size: 1em;
+  color: #333;
+  padding: 25px;
+}
+
+h1 {
+  font-size: 1.5em;
+}
+
+h2 {
+  font-size: 1.3em;
+}
+
+h3 {
+  font-size: 1.2em;
+}
+
+h4 {
+  font-size: 1em;
+}
+
+p, ul, ol, dl, blockquote {
+  font-size: .875em;
+}
+
+a {
+  outline: none;
+  text-decoration: none;
+}
+
+nav a {
+  color: #000;
+  display: inline-block;
+  border-bottom: 1px solid transparent;
+  margin: 2px auto;
+  padding: 5px;
+}
+
+nav a:hover {
+  border-bottom: 1px solid orange;
+}
+
+#header {
+  width: 30%;
+  float: left;
+  text-align: center;
+}
+
+#main {
+  width: 60%;
+  float: right;
+  line-height: 1.2;
+  padding: 0;
+}
+
+#container {
+  max-width: 55em;
+  margin: auto;
+  padding: 1em;
+}
+
+.cf:before {
+  content: "";
+  display: block;
+}
+
+.cf:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+a.button, button {
+ font-family: monospace;
+ background: #eee;
+ border: 1px solid #aaa;
+ border-top: 1px solid #ccc;
+ border-left: 1px solid #ccc;
+ -moz-border-radius: 3px;
+ -webkit-border-radius: 3px;
+ border-radius: 3px;
+ color: #444;
+ display: inline-block;
+ font-size: 11px;
+ font-weight: 700;
+ text-decoration: none;
+ text-shadow: 0 1px rgba(255,255,255,0.75);
+ cursor: pointer;
+ margin-bottom: 20px;
+ padding: 4px 12px;
+}
+
+input[type="submit"], input[type="reset"], input[type="button"] {
+  width: 150px;
+  font-family: monospace;
+  font-size: .75em;
+  background: #eee;
+  border: 1px solid #aaa;
+  border-top: 1px solid #ccc;
+  border-left: 1px solid #ccc;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  border-radius: 3px;
+  color: #444;
+  display: inline-block;
+  text-decoration: none;
+  text-shadow: 0 1px rgba(255,255,255,0.75);
+  cursor: pointer;
+  margin-bottom: 20px;
+  padding: 4px 12px;
+}
+
+textarea, select, input, input[type="text"], input[type="password"], input[type="email"] {
+  font-family: monospace;
+  border: 1px solid #ccc;
+  outline: none;
+  -moz-border-radius: 2px;
+  -webkit-border-radius: 2px;
+  border-radius: 2px;
+  font-size: .875em;
+  width: 300px;
+  max-width: 100%;
+  display: block;
+  margin-bottom: 20px;
+  background: #fdfdfd;
+  padding: 6px 4px;
+}
+
+a:visited, a:hover, a:active, a:focus {
+  outline: none;
+}
+
+a.button:hover, button:hover, input[type="submit"]:hover, input[type="reset"]:hover, input[type="button"]:hover {
+  color: #222;
+  background: #ddd;
+  border: 1px solid #888;
+  border-top: 1px solid #aaa;
+  border-left: 1px solid #aaa;
+}
+
+a.button:active, button:active, input[type="submit"]:active, input[type="reset"]:active, input[type="button"]:active {
+  border: 1px solid #666;
+  background: #ccc;
+}
+
+textarea:focus, input:focus, select:focus {
+  border: 1px solid #aaa;
+}
+
+textarea {
+  min-height: 60px;
+}
+
+.markdown-information {
+  color: #757575;
+}
+
+form, fieldset {
+  margin-bottom: 20px;
+}

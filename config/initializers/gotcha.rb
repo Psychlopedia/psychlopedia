@@ -1,0 +1,2 @@
+Gotcha.unregister_all_types
+Gotcha.register_type SpanishBackwardGotcha

@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  pseudonym: MyString
+  title: MyString
+  body: MyText
+  hearts: 1
+
+two:
+  pseudonym: MyString
+  title: MyString
+  body: MyText
+  hearts: 1
