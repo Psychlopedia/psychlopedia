@@ -1,5 +1,5 @@
 Given(/^I am a new anonymous user$/) do
-  Capybara.current_session.driver.browser.manage.delete_all_cookies
+  Capybara.current_session.driver.browser.clear_cookies
 end
 
 Given(/^I am a returning user$/) do
