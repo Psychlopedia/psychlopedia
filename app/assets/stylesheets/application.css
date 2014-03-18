@@ -115,6 +115,18 @@ nav a:hover {
   border-bottom: 1px solid #30EF8E;
 }
 
+nav a.what {
+  color: silver;
+  display: inline-block;
+  border-bottom: 1px solid #726E6D;
+  margin: 20px auto;
+  padding: 5px;
+}
+
+nav a.what:hover {
+  border-bottom: 1px solid #30EF8E;
+}
+
 #header {
   width: 30%;
   float: left;
