@@ -110,6 +110,7 @@ a {
 }
 
 nav a {
+  font-size: 1.2em;
   color: #000;
   display: inline-block;
   border-bottom: 1px solid #726E6D;
@@ -250,6 +251,7 @@ form, fieldset {
 }
 
 li.experiences a {
+  font-size: 1.2em;
   margin: 0 0 3px 0;
   font-weight: bold;
   color: #333;
@@ -267,4 +269,12 @@ li.experiences a:hover {
 
 ::-moz-selection {
   background: #30EF8E;
+}
+
+div.about {
+  font-size: 1.2em;
+}
+
+span.emphasis {
+  font-weight: bold;
 }
