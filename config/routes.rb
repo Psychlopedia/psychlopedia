@@ -1,6 +1,6 @@
 Psychlopedia::Application.routes.draw do
-  resources :experiences
+  resources :experiences, path: 'experiencias'
+  get 'about', to: 'experiences#about', path: 'kestapasando'
   get 'random', to: 'experiences#random'
-  get 'about', to: 'experiences#about'
   root to: 'experiences#random'
 end
