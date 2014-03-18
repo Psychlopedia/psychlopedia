@@ -105,8 +105,13 @@ p, ul, ol, dl, blockquote {
 }
 
 a {
+  color: #333;
   outline: none;
   text-decoration: none;
+}
+
+div.about a {
+  border-bottom: 1px solid black;
 }
 
 nav a {
