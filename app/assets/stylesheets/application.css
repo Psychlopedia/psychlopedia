@@ -106,13 +106,13 @@ a {
 nav a {
   color: #000;
   display: inline-block;
-  border-bottom: 1px solid transparent;
+  border-bottom: 1px solid #726E6D;
   margin: 2px auto;
   padding: 5px;
 }
 
 nav a:hover {
-  border-bottom: 1px solid orange;
+  border-bottom: 1px solid #30EF8E;
 }
 
 #header {
@@ -228,4 +228,16 @@ textarea {
 
 form, fieldset {
   margin-bottom: 20px;
+}
+
+li.experiences a {
+  margin: 0 0 3px 0;
+  font-weight: bold;
+  color: #333;
+  display: inline-block;
+  border-bottom: 1px solid #726E6D;
+}
+
+li.experiences a:hover {
+  border-bottom: 1px solid #30EF8E;
 }

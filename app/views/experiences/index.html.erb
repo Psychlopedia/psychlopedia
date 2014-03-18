@@ -1,5 +1,9 @@
 <%- if @experiences -%>
   <% @experiences.each do |experience| -%>
-    <li><%= link_to experience.title || '<no title>', experience_path(experience) %></li>
+    <li class="experiences">
+      <%= experience.created_at.to_formatted_s(:psychlopedia) -%>
+      <%= link_to (experience.title || 'untitled'), experience_path(experience) %> by
+      <%= experience.pseudonym || 'anonymous' %>
+      </li>
   <%- end -%>
 <%- end %>
