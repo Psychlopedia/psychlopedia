@@ -253,3 +253,11 @@ li.experiences a {
 li.experiences a:hover {
   border-bottom: 1px solid #30EF8E;
 }
+
+::selection {
+  background: #30EF8E;
+}
+
+::-moz-selection {
+  background: #30EF8E;
+}
