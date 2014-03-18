@@ -8,7 +8,6 @@ Given(/^some experiences exist$/) do
   Experience.create title: 'Yet Another Experience', pseudonym: 'ratatouille', body: 'this is the real body'
 end
 
-# XXX: I should review the markup for experiences.
 Then(/^I see one of the experiences$/) do
   experience = Experience.find_by_title(find('.title').text)
   expect_page_to_have_experience(experience)
