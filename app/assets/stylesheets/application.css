@@ -255,7 +255,7 @@ form, fieldset {
   margin-bottom: 20px;
 }
 
-li.experiences a {
+li.experience a {
   font-size: 1.2em;
   margin: 0 0 3px 0;
   font-weight: bold;
@@ -264,7 +264,7 @@ li.experiences a {
   border-bottom: 1px solid #726E6D;
 }
 
-li.experiences a:hover {
+li.experience a:hover {
   border-bottom: 1px solid #30EF8E;
 }
 
