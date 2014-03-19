@@ -280,6 +280,14 @@ div.about {
   font-size: 1.2em;
 }
 
+div.about a.create:hover {
+  border-bottom: 1px solid #FF00CC;
+}
+
 span.emphasis {
   font-weight: bold;
+}
+
+span.self:hover {
+  color: #30EF8E;
 }
