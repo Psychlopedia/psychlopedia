@@ -1,0 +1,12 @@
+language: ruby
+
+rvm:
+  - 2.0.0
+  - 1.9.3
+
+script: bundle exec rake cucumber
+
+# whitelist
+branches:
+  only:
+      - master
