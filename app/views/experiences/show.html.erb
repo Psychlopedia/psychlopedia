@@ -3,7 +3,7 @@
     <h1 class="title"><%= @experience.title || '<no title>' -%></h1>
     <h3><%= @experience.pseudonym || 'anonymous' -%> @ <%= @experience.created_at.to_formatted_s(:long) %></h3>
     <div>
-      <%= @experience.body -%>
+      <%= simple_format(@experience.body) -%>
     </div>
   </div>
 <%- end -%>
