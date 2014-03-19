@@ -322,3 +322,7 @@ span.self:hover {
 .etxt {
   width: 700px;
 }
+
+div.field textarea {
+  width: 600px;
+}
