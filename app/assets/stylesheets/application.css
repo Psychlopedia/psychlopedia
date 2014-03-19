@@ -291,3 +291,7 @@ span.emphasis {
 span.self:hover {
   color: #30EF8E;
 }
+
+.experience-paragraph {
+  margin-bottom: 10px;
+}
