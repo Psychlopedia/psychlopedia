@@ -2,7 +2,7 @@
   <% @experiences.each do |experience| -%>
     <li class="experience">
       <%= experience.created_at.to_formatted_s(:psychlopedia) -%>
-      <%= link_to (experience.title || 'untitled'), experience_path(experience) %> by
+      <%= link_to (truncate(experience.title || 'untitled', length: 45, omission: '...')), experience_path(experience) %> by
       <%= experience.pseudonym || 'anonymous' %>
       </li>
   <%- end -%>
