@@ -19,11 +19,11 @@ test: &test
 production:
   adapter: postgresql
   encoding: unicode
-  database: psychlopedia_production
+  database: ddoqhl42bql323
   pool: 5
   timeout: 5000
-  username: postgres
-  password: postgres
+  username: sgqpwwrupweuia
+  password: EKdZh8MfWLu8l0xTbMQ4sdgnPi
 
 cucumber:
   <<: *test
