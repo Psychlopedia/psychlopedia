@@ -1,4 +1,8 @@
 class Experience < ActiveRecord::Base
+  extend FriendlyId
+
+  friendly_id :title, use: :slugged
+
   validates :body, uniqueness: true, presence: true
 
   before_save :defaults
