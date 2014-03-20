@@ -323,7 +323,7 @@ span.self:hover {
   color: #30EF8E;
 }
 
-.epgraph {
+div.etxt p {
   font-size: 1em;
   font-weight: bold;
   margin-bottom: 10px;
