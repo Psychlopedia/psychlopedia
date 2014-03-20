@@ -12,15 +12,15 @@
   <% end %>
 
   <div class="field">
-    <%= f.label 'Pseudónimo (opcional)' %><br>
-    <%= f.text_field :pseudonym %>
-  </div>
-  <div class="field">
     <%= f.label 'Título (opcional)' %><br>
     <%= f.text_field :title %>
   </div>
+  <div class="field">
+    <%= f.label 'Pseudónimo (opcional)' %><br>
+    <%= f.text_field :pseudonym %>
+  </div>
   <div id="experience" class="field">
-    <%= f.label 'Contá tu experiencia' %><br>
+    <%= f.label 'Contanos tu experiencia' %><br>
     <%= f.text_area :body, cols: 40, rows: 30 %>
   </div>
   <div class="field">

@@ -299,8 +299,18 @@ div.about {
   font-size: 1.2em;
 }
 
-div.about a.create:hover {
+a.create {
+  font-weight: bold;
+}
+
+a.create:hover {
   border-bottom: 1px solid #FF00CC;
+}
+
+.no-data {
+  font-size: 1.2em;
+  margin-top: 8px;
+  text-align: center;
 }
 
 span.emphasis {

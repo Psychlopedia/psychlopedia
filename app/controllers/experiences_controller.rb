@@ -9,7 +9,12 @@ class ExperiencesController < ApplicationController
 
   def random
     @experience = Experience.random
-    render :show
+
+    if @experience
+      render :show
+    else
+      redirect_to experiences_url
+    end
   end
 
   def new
