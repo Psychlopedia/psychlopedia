@@ -322,28 +322,3 @@ span.self:hover {
 .etxt {
   width: 700px;
 }
-
-body.colorwave {
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  -webkit-animation: gradient-change linear 6s infinite alternate;
-  -moz-animation: gradient-change ease-in-out 6s infinite alternate;
-}
-
-@-webkit-keyframes gradient-change {
-    0%   {background: #dff;}
-    33%  {background: #fdf;}
-    66%  {background: #ffd;}
-    100%   {background: #dff;}
-}
-
-@-moz-keyframes gradient-change {
-    0%   {background: #dff;}
-    33%  {background: #fdf;}
-    66%  {background: #ffd;}
-    100%   {background: #dff;}
-}
-
-a.toggle {
-  font-size: 0.8em;
-}

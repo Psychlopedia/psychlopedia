@@ -1,6 +1,5 @@
 /**
  * Soon.
- * */
 (function($) {
   $(document).ready(function() {
     $("a.toggle").click(function(ev) {
@@ -9,3 +8,4 @@
     });
   });
 })(jQuery);
+**/
