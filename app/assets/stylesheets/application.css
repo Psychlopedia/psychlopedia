@@ -121,9 +121,28 @@ nav a {
   border-bottom: 1px solid #726E6D;
   margin: 2px auto;
   padding: 5px;
+  text-decoration: none;
+  -webkit-transition : all 0.15s linear;
+   -moz-transition : all 0.15s linear;
+}
+
+@-webkit-keyframes hover-change {
+  0%   {color: cyan;}
+  25%  {color: magenta;}
+  50%  {color: #30EF8E;}
+  100% {color: white;}
+}
+
+@-moz-keyframes hover-change {
+    0%   {color: cyan;}
+    25%  {color: magenta;}
+    50%  {color: #30EF8E;}
+    100% {color: white;}
 }
 
 nav a:hover {
+  -webkit-animation: hover-change linear 0.2s infinite;
+  -moz-animation: hover-change linear 0.2s infinite;
   border-bottom: 1px solid #30EF8E;
 }
 
@@ -289,6 +308,8 @@ span.emphasis {
 }
 
 span.self:hover {
+  -webkit-animation: hover-change linear 4s infinite;
+  -moz-animation: hover-change linear 4s infinite;
   color: #30EF8E;
 }
 
@@ -300,4 +321,29 @@ span.self:hover {
 
 .etxt {
   width: 700px;
+}
+
+body.colorwave {
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  -webkit-animation: gradient-change linear 6s infinite alternate;
+  -moz-animation: gradient-change ease-in-out 6s infinite alternate;
+}
+
+@-webkit-keyframes gradient-change {
+    0%   {background: #dff;}
+    33%  {background: #fdf;}
+    66%  {background: #ffd;}
+    100%   {background: #dff;}
+}
+
+@-moz-keyframes gradient-change {
+    0%   {background: #dff;}
+    33%  {background: #fdf;}
+    66%  {background: #ffd;}
+    100%   {background: #dff;}
+}
+
+a.toggle {
+  font-size: 0.8em;
 }
