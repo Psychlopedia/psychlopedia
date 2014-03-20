@@ -174,7 +174,8 @@ nav a.what:hover {
 
 #container {
   max-width: 55em;
-  margin: auto;
+  // lol, this helps. i must learn why.
+  //margin: auto;
   padding: 1em;
 }
 
