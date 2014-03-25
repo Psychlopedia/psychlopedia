@@ -16,5 +16,17 @@ class Experience < ActiveRecord::Base
   def defaults
     self.pseudonym ||= 'anonymous'
     self.title ||= 'untitled experience'
+    self.hearts = []
+  end
+
+  def human_readable_rating
+    hearts.inject({}) do |hash, rating|
+      if hash[rating].nil?
+        hash[rating] = 1
+      else
+        hash[rating] += 1
+      end
+      hash
+    end
   end
 end
