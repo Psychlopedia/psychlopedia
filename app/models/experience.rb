@@ -1,3 +1,5 @@
+# FIX: serialization of self.hearts
+
 class Experience < ActiveRecord::Base
   extend FriendlyId
 
@@ -19,7 +21,7 @@ class Experience < ActiveRecord::Base
     self.hearts = []
   end
 
-  def human_readable_rating
+  def grouped_rating
     hearts.inject({}) do |hash, rating|
       if hash[rating].nil?
         hash[rating] = 1
