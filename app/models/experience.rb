@@ -23,11 +23,7 @@ class Experience < ActiveRecord::Base
 
   def grouped_rating
     hearts.inject({}) do |hash, rating|
-      if hash[rating].nil?
-        hash[rating] = 1
-      else
-        hash[rating] += 1
-      end
+      hash[rating].nil? ? hash[rating] = 1 : hash[rating] += 1
       hash
     end
   end
