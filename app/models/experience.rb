@@ -1,4 +1,6 @@
-# FIX: serialization of self.hearts
+# encoding: utf-8
+
+require 'yaml'
 
 class Experience < ActiveRecord::Base
   extend FriendlyId
@@ -15,15 +17,22 @@ class Experience < ActiveRecord::Base
     Experience.find Experience.ids.sample
   end
 
-  def defaults
-    self.pseudonym ||= 'anonymous'
-    self.title ||= 'untitled experience'
-  end
-
-  def grouped_rating
+  def rating
+    hearts = YAML.load(self.hearts)
     hearts.inject({}) do |hash, rating|
       hash[rating].nil? ? hash[rating] = 1 : hash[rating] += 1
       hash
     end
+  end
+
+  def cocktails
+    YAML.load(self.substances)
+  end
+
+  private
+
+  def defaults
+    self.pseudonym ||= 'anónimo'
+    self.title ||= 'sin título'
   end
 end
