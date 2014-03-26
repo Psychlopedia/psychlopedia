@@ -355,3 +355,7 @@ ul.substance_list li a {
 ul.substance_list li a:hover {
   border-bottom: 1px solid aqua;
 }
+
+nav a.guides {
+  margin-top: 20px;
+}
