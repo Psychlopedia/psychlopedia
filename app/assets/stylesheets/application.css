@@ -338,22 +338,29 @@ div.field textarea {
   width: 600px;
 }
 
-ul.substance_list li {
-  margin-top: 10px;
-  display: list-item;
+div.miniguide {
+  display: block;
+  margin-bottom: 25px;
 }
 
-ul.substance_list li a {
-  font-size: 1.4em;
-  margin: 0 0 3px 0;
-  font-weight: bold;
+div.miniguide h2 {
+  text-decoration: underline;
+  font-size: 1.5em;
   color: #333;
-  display: inline-block;
-  border-bottom: 1px solid #333;
+  margin-bottom: 10px;
 }
 
-ul.substance_list li a:hover {
-  border-bottom: 1px solid aqua;
+div.miniguide h2 a:hover {
+  color: #30EF8E;
+}
+
+ul.guide_goodies {
+  margin-left: 15px;
+  font-size: 1.1em;
+}
+
+ul.guide_goodies li a:hover {
+  border-bottom: 1px solid #30EF8E;
 }
 
 nav a.guides {

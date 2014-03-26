@@ -1,8 +1,39 @@
 <div class="guide_index">
-  <ul class="substance_list">
-    <li><%= link_to 'DXM', dxm_guide_path -%></li>
-    <li><%= link_to 'LSD', lsd_guide_path -%></li>
-    <li><%= link_to 'MDMA', mdma_guide_path -%></li>
-    <li><%= link_to 'NBOMEs', nbomes_guide_path -%></li>
-  </ul>
+  <div class="miniguide">
+    <h2><%= link_to 'Set and Setting', set_and_setting_path -%></h2>
+  </div>
+  <div class="miniguide">
+    <!-- pro-tip: more common names/references on hover? -->
+    <h2>Dextrometorfano (DXM)</h2>
+    <ul class="guide_goodies">
+      <!-- XXX: calculators, experiences, etc. -->
+      <li><%= link_to 'Guía', dxm_guide_path -%></li>
+      <li><%= link_to 'Experiencias', '#'%></li>
+      <li><%= link_to 'Herramientas interactivas', '#'%></li>
+    </ul>
+  </div>
+  <div class="miniguide">
+    <h2>Dietilamida de ácido lisérgico (LSD)</h2>
+    <ul class="guide_goodies">
+      <li><%= link_to 'Guía', lsd_guide_path -%></li>
+      <li><%= link_to 'Experiencias', '#'%></li>
+      <li><%= link_to 'Herramientas interactivas', '#'%></li>
+    </ul>
+  </div>
+  <div class="miniguide">
+    <h2>Éxtasis (MDMA)</h2>
+    <ul class="guide_goodies">
+      <li><%= link_to 'Guía', mdma_guide_path -%></li>
+      <li><%= link_to 'Experiencias', '#'%></li>
+      <li><%= link_to 'Herramientas interactivas', '#'%></li>
+    </ul>
+  </div>
+  <div class="miniguide">
+    <h2>Smiles (25i-NBOMe)</h2>
+    <ul class="guide_goodies">
+      <li><%= link_to 'Guía', nbomes_guide_path -%></li>
+      <li><%= link_to 'Experiencias', '#'%></li>
+      <li><%= link_to 'Herramientas interactivas', '#'%></li>
+    </ul>
+  </div>
 </div>
