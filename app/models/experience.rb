@@ -7,7 +7,7 @@ class Experience < ActiveRecord::Base
 
   validates :body, uniqueness: true, presence: true
 
-  before_save :defaults
+  before_create :defaults
 
   default_scope {order('created_at DESC')}
 
