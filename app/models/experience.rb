@@ -18,7 +18,6 @@ class Experience < ActiveRecord::Base
   def defaults
     self.pseudonym ||= 'anonymous'
     self.title ||= 'untitled experience'
-    self.hearts = []
   end
 
   def grouped_rating
