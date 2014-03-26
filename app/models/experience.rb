@@ -12,7 +12,7 @@ class Experience < ActiveRecord::Base
   default_scope {order('created_at DESC')}
 
   def self.random
-    order('RANDOM()').first
+    Experience.find Experience.ids.sample
   end
 
   def defaults
