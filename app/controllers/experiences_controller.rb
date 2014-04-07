@@ -10,7 +10,7 @@ class ExperiencesController < ApplicationController
   def random
     @experience = Experience.random
 
-    if @experience
+    if @experience.present?
       render :show
     else
       redirect_to experiences_url
@@ -22,9 +22,8 @@ class ExperiencesController < ApplicationController
   end
 
   def create
-    @experience = Experience.new(experience_params)
-
-    if gotcha_valid? && @experience.save
+    if gotcha_valid?
+      @experience = Experience.create(experience_params)
       redirect_to experience_path(@experience)
     else
       render :new
@@ -40,6 +39,8 @@ class ExperiencesController < ApplicationController
   end
 
   def experience_params
-    params.require(:experience).permit(:pseudonym, :title, :body)
+    experience = params.require(:experience)
+    attributes = [:pseudonym, :title, :body].reject { |attribute| experience[attribute].blank? }
+    experience.permit(*attributes)
   end
 end

@@ -9,11 +9,12 @@ class Experience < ActiveRecord::Base
 
   validates :body, uniqueness: true, presence: true
 
-  before_create :defaults
+  before_save :defaults
 
   default_scope {order('created_at DESC')}
 
   def self.random
+    return Experience.none unless Experience.exists?
     Experience.find Experience.ids.sample
   end
 
@@ -28,8 +29,6 @@ class Experience < ActiveRecord::Base
   def cocktails
     YAML.load(self.substances)
   end
-
-  private
 
   def defaults
     self.pseudonym ||= 'anónimo'
