@@ -25,7 +25,9 @@ class Experience < ActiveRecord::Base
 
   # XXX: fucking LOL. improve this, for fuck's sake.
   def human_readable_rating
+    return if self.hearts.empty?
     stars = self.hearts.max_by { |stars, quantity| quantity }.first.to_i
-    return ('&#9733;' * stars).html_safe
+    stars_rating = ('&#9733;' * stars).html_safe
+    stars_rating
   end
 end
