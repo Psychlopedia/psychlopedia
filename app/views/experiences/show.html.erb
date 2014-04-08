@@ -5,7 +5,7 @@
     <div class="etxt">
       <%= markdown(@experience.body) -%>
     </div>
-    <a href="#" class="toggle_comments">Mostrar comentarios</a>
+    <%= link_to 'Mostrar comentarios', '#', class: 'toggle_comments' -%>
     <div id="comments" style="display:none;">
       <div id="disqus_thread"></div>
       <script type="text/javascript">
