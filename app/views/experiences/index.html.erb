@@ -1,9 +1,9 @@
 <%- unless @experiences.empty? -%>
   <% @experiences.each do |experience| -%>
     <li class="experience">
-      <%= experience.created_at.to_formatted_s(:psychlopedia) -%>
-      <%= link_to (truncate(experience.title || 'untitled', length: 45, omission: '...')), experience_path(experience) -%> by
-      <%= experience.pseudonym || 'anonymous' -%>
+      <%= l(experience.created_at.to_date, format: :short).upcase -%>
+      <%= link_to (truncate(experience.title, length: 45, omission: '...')), experience_path(experience) -%> por
+      <%= experience.pseudonym -%>
       </li>
   <%- end -%>
 <%- else -%>
