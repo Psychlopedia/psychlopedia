@@ -1,7 +1,5 @@
 # encoding: utf-8
 
-require 'yaml'
-
 class Experience < ActiveRecord::Base
   extend FriendlyId
 
@@ -16,18 +14,6 @@ class Experience < ActiveRecord::Base
   def self.random
     return Experience.none unless Experience.exists?
     Experience.find Experience.ids.sample
-  end
-
-  def rating
-    hearts = YAML.load(self.hearts)
-    hearts.inject({}) do |hash, rating|
-      hash[rating].nil? ? hash[rating] = 1 : hash[rating] += 1
-      hash
-    end
-  end
-
-  def cocktails
-    YAML.load(self.substances)
   end
 
   def defaults
