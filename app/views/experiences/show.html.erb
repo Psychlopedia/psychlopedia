@@ -5,5 +5,19 @@
     <div class="etxt">
       <%= markdown(@experience.body) -%>
     </div>
+    <a href="#" class="toggle_comments">Mostrar comentarios</a>
+    <div id="comments" style="display:none;">
+      <div id="disqus_thread"></div>
+      <script type="text/javascript">
+          var disqus_shortname = 'psychlopedia';
+          (function() {
+              var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+              dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+              (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+          })();
+      </script>
+      <noscript>Por favor, activá Javascript para poder ver los comentarios.</noscript>
+      <a href="http://disqus.com" class="dsq-brlink">Comentarios provistos por <span class="logo-disqus">Disqus</span></a>
+    </div>
   </div>
 <%- end -%>

@@ -1,11 +1,8 @@
-/**
- * Soon.
 (function($) {
   $(document).ready(function() {
-    $("a.toggle").click(function(ev) {
+    $("a.toggle_comments").click(function(ev) {
       ev.preventDefault();
-      $("body").toggleClass("colorwave");
+      $("#comments").toggle();
     });
   });
 })(jQuery);
-**/
