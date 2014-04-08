@@ -1,11 +1,27 @@
 class ExperiencesController < ApplicationController
-  before_action :set_experience, only: [:show]
+  before_action :set_experience, only: [:show, :update]
 
   def index
     @experiences = Experience.all
   end
 
   def show; end
+
+  def update
+    rating = params[:experience][:hearts]
+
+    if @experience.hearts[rating].nil?
+      @experience.hearts[rating] = 1
+    else
+      @experience.hearts[rating] += 1
+    end
+
+    if @experience.save
+      redirect_to experience_path(@experience), notice: '¡La experiencia ha sido puntuada!'
+    else
+      redirect_to experience_path(@experience), notice: 'No se ha podido puntuar la experiencia. ¿Probarías de nuevo?'
+    end
+  end
 
   def random
     @experience = Experience.random

@@ -1,9 +1,22 @@
 <%- if @experience.present? -%>
   <div>
-    <h1 class="title"><%= @experience.title || '<no title>' -%></h1>
-    <h3><%= @experience.pseudonym || 'anonymous' -%> &#8669; <%= l @experience.created_at.to_date, format: :long %></h3>
+    <%- if flash[:notice] -%>
+      <p class="notice"><%= flash[:notice] -%></p>
+    <%- end -%>
+    <div class="thingo">
+     <h1 class="title"><%= @experience.title -%></h1>
+     <h2><%= @experience.human_readable_rating -%></h2>
+    </div>
+    <h3 class="whoandwhen"><%= @experience.pseudonym -%> &#8669; <%= l @experience.created_at.to_date, format: :long %></h3>
     <div class="etxt">
       <%= markdown(@experience.body) -%>
+    </div>
+    <div class="ratings">
+      <%= form_for @experience do |f| -%>
+        <%= f.label :hearts, 'Calificá esta experiencia: ' -%>
+        <%= f.number_field :hearts, min: 1, max: 5 -%>
+        <%= f.submit 'Puntuar' -%>
+      <%- end -%>
     </div>
     <%= link_to 'Mostrar comentarios', '#', class: 'toggle_comments' -%>
     <div id="comments" style="display:none;">

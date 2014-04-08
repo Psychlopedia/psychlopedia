@@ -370,3 +370,37 @@ nav a.guides {
 div.about > p {
   margin-bottom: 20px;
 }
+
+div.ratings form {
+  margin-bottom: 0px;
+}
+
+div.ratings input[type="number"] {
+  height: 15px;
+  width: 35px;
+  display: inline;
+  padding-top: 2px;
+}
+
+div.ratings input[type="submit"] {
+  display: inline;
+  height: 25px;
+  width: 80px;
+}
+
+p.notice {
+  border: 1px solid black;
+  padding: 4px 3px 4px 3px;
+  text-align: center;
+  margin-bottom: 10px;
+  font-weight: bold;
+  background-color: #30EF8E;
+}
+
+div.thingo > h1, h2 {
+  float: left;
+}
+
+h3.whoandwhen {
+  clear: both;
+}

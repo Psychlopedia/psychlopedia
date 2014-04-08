@@ -4,5 +4,9 @@
       ev.preventDefault();
       $("#comments").toggle();
     });
+
+    $(".notice").on("click", function(ev) {
+      $(ev.target).hide();
+    });
   });
 })(jQuery);
