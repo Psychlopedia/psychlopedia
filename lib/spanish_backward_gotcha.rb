@@ -3,7 +3,7 @@
 # taken from https://github.com/seejohnrun/gotcha/blob/master/gotchas/backward_gotcha.rb
 class SpanishBackwardGotcha < Gotcha::Base
   MIN_STRING_LENGTH = 4
-  MAX_STRING_LENGTH = 9
+  MAX_STRING_LENGTH = 6
 
   CHARS = ('a'..'z').to_a + ('0'..'9').to_a
 
