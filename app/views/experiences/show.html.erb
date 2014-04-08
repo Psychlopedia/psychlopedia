@@ -1,7 +1,7 @@
 <%- if @experience.present? -%>
   <div>
     <h1 class="title"><%= @experience.title || '<no title>' -%></h1>
-    <h3><%= @experience.pseudonym || 'anonymous' -%> @ <%= @experience.created_at.to_formatted_s(:long) %></h3>
+    <h3><%= @experience.pseudonym || 'anonymous' -%> &#8669; <%= l @experience.created_at.to_date, format: :long %></h3>
     <div class="etxt">
       <%= markdown(@experience.body) -%>
     </div>
