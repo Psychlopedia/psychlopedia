@@ -372,7 +372,7 @@ div.about > p {
 }
 
 div.ratings form {
-  margin-bottom: 0px;
+  margin-bottom: -15px;
 }
 
 div.ratings input[type="number"] {
