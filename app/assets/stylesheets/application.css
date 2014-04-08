@@ -366,3 +366,7 @@ ul.guide_goodies li a:hover {
 nav a.guides {
   margin-top: 20px;
 }
+
+div.about > p {
+  margin-bottom: 20px;
+}
