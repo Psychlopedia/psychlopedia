@@ -30,9 +30,7 @@ class ExperiencesController < ApplicationController
   def random
     @experience = Experience.random
 
-    if @experience.present?
-      render :show
-    else
+    unless @experience.present?
       redirect_to experiences_url
     end
   end
