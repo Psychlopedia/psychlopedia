@@ -19,6 +19,15 @@
     <%= f.label 'Pseudónimo (opcional)' %><br>
     <%= f.text_field :pseudonym %>
   </div>
+  <div class="field">
+    <%= f.fields_for :cocktails do |builder| -%>
+      <%= builder.label :substance, 'Sustancia' -%>
+      <%= builder.text_field :substance, size: 5 -%>
+      <%= builder.label :dosage, 'Dosis' -%>
+      <%= builder.text_field :dosage -%>
+      <!-- XXX: presentation & administration -->
+    <%- end -%>
+  </div>
   <div id="experience" class="field">
     <%= f.label 'Contanos tu experiencia' %><br>
     <%= f.text_area :body, cols: 40, rows: 30 %>

@@ -3,6 +3,9 @@
 class Experience < ActiveRecord::Base
   extend FriendlyId
 
+  has_many :cocktails, dependent: :destroy
+  accepts_nested_attributes_for :cocktails
+
   friendly_id :title, use: :slugged
 
   validates :body, uniqueness: true, presence: true
