@@ -391,7 +391,7 @@ div.ratings input[type="submit"] {
 }
 
 p.notice {
-  border: 1px solid black;
+  border: 1px solid #05964C;
   padding: 4px 3px 4px 3px;
   text-align: center;
   margin-bottom: 10px;
@@ -414,4 +414,27 @@ h2 {
 
 .keep_reading {
   font-size: .9em;
+}
+
+div.cocktail {
+  display: none;
+}
+
+div.cocktail input {
+  width: 125px;
+}
+
+div#experience {
+  clear: both;
+}
+
+span.enrichment {
+  display: inline-block;
+  border-bottom: 1px solid black;
+  cursor: pointer;
+  margin-bottom: 15px;
+}
+
+div#experience textarea {
+  font-size: 1.2em;
 }
