@@ -8,18 +8,22 @@ class ExperiencesController < ApplicationController
   def show; end
 
   def update
-    rating = params[:experience][:hearts]
+    rating = params[:experience][:hearts].to_i
 
-    if @experience.hearts[rating].nil?
-      @experience.hearts[rating] = 1
+    unless check_rating(rating)
+      redirect_to experience_path(@experience), notice: 'La valuación va del 1 al 5. Por favor, intentá puntuar nuevamente.'
     else
-      @experience.hearts[rating] += 1
-    end
+      if @experience.hearts[rating].nil?
+        @experience.hearts[rating] = 1
+      else
+        @experience.hearts[rating] += 1
+      end
 
-    if @experience.save
-      redirect_to experience_path(@experience), notice: '¡La experiencia ha sido puntuada!'
-    else
-      redirect_to experience_path(@experience), notice: 'No se ha podido puntuar la experiencia. ¿Probarías de nuevo?'
+      if @experience.save
+        redirect_to experience_path(@experience), notice: '¡La experiencia ha sido puntuada!'
+      else
+        redirect_to experience_path(@experience), notice: 'No se ha podido puntuar la experiencia. ¿Probarías de nuevo?'
+      end
     end
   end
 
@@ -58,5 +62,9 @@ class ExperiencesController < ApplicationController
     experience = params.require(:experience)
     attributes = [:pseudonym, :title, :body].reject { |attribute| experience[attribute].blank? }
     experience.permit(*attributes)
+  end
+
+  def check_rating(rating)
+    (1..5).include?(rating)
   end
 end
