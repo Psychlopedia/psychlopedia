@@ -404,3 +404,8 @@ div.thingo > h1, h2 {
 h3.whoandwhen {
   clear: both;
 }
+
+h2 {
+  margin-left: 5px;
+  font-size: 1.7em;
+}
