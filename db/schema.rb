@@ -11,10 +11,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140326062625) do
+ActiveRecord::Schema.define(version: 20140409063207) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "cocktails", force: true do |t|
+    t.string   "substance"
+    t.string   "dosage"
+    t.string   "presentation"
+    t.string   "adminstration"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "experience_id"
+  end
 
   create_table "experiences", force: true do |t|
     t.string   "pseudonym"
@@ -24,7 +34,6 @@ ActiveRecord::Schema.define(version: 20140326062625) do
     t.datetime "updated_at"
     t.string   "slug"
     t.string   "hearts"
-    t.string   "location"
   end
 
   add_index "experiences", ["slug"], name: "index_experiences_on_slug", unique: true, using: :btree

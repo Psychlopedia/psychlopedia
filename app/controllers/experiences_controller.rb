@@ -37,6 +37,7 @@ class ExperiencesController < ApplicationController
 
   def new
     @experience = Experience.new
+    @experience.cocktails.build
   end
 
   def create
