@@ -27,11 +27,11 @@ class Experience < ActiveRecord::Base
   end
 
   def human_readable_rating
-    return if self.hearts.empty?
-
-    black_stars = self.hearts.max_by { |stars, quantity| quantity }.first.to_i
-    complete_rating = (('&#9733;' * black_stars) + ('&#9734;' * (5 - black_stars))).html_safe
-
-    complete_rating
+    if self.hearts.empty?
+      ('&#9734;' * 5).html_safe
+    else
+      black_stars = self.hearts.max_by { |stars, quantity| quantity }.first.to_i
+      (('&#9733;' * black_stars) + ('&#9734;' * (5 - black_stars))).html_safe
+    end
   end
 end
