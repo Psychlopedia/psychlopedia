@@ -5,7 +5,7 @@
     </div>
     <h3 class="whoandwhen"><%= @experience.pseudonym -%> &#8669; <%= l @experience.created_at.to_date, format: :long %></h3>
     <div class="etxt">
-      <%= truncate(markdown(@experience.body), length: 75, omission: '[...]') -%>
+      <%= markdown(truncate(@experience.body), length: 75, omission: '[...]') -%>
       <span class="keep_reading"><%= link_to 'Continuá leyendo...', experience_path(@experience) -%></span>
     </div>
   </div>
