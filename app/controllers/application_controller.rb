@@ -6,8 +6,8 @@ class ApplicationController < ActionController::Base
   private
 
   def check_first_timer
-    unless cookies.permanent.signed[:stale]
-      cookies.permanent.signed[:stale] = true
+    unless cookies.permanent.signed[:reincident]
+      cookies.permanent.signed[:reincident] = true
       redirect_to about_url
     end
   end
