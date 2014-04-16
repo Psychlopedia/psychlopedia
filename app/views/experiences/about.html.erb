@@ -3,16 +3,18 @@
     Bienvenidos a <span class="self emphasis">Psychlopedia</span>.
   </p>
   <p>
-    Psychlopedia es un depósito de experiencias bajo estados alterados de la conciencia en español con aspiraciones de convertirse en una poderosa herramienta de farmacovigilancia para un ejercicio seguro de la psiconáutica.
+    Psychlopedia es un archivo de <span class="emphasis">experiencias</span> bajo <%= link_to 'estados alterados de la conciencia', 'https://es.wikipedia.org/wiki/Estado_alterado_de_conciencia', target: '_blank' -%> en español. Nuestra intención es convertirnos en una herramienta confiable de educación y farmacovigilancia que asista al <%= link_to 'ejercicio seguro', 'https://es.wikipedia.org/wiki/Reducci%C3%B3n_del_da%C3%B1o', target: '_blank' -%> de la psiconáutica.
   </p>
   <p>
-    Podés <%= link_to 'buscar', experiences_path -%>, <%= link_to 'leer', experiences_path -%>, comentar y <%= link_to 'crear', new_experience_path, class: 'create' -%> experiencias en este depósito; tanto si querés compartir una vivencia como si estás buscando información sobre su carácter general, Psychlopedia está para servir esos propósitos.
+    Podés <%= link_to 'buscar', experiences_path -%>, <%= link_to 'leer', experiences_path -%>, comentar y <%= link_to 'crear', new_experience_path -%> experiencias en este depósito; tanto si querés compartir una vivencia como si estás buscando información sobre su carácter general, Psychlopedia está para servir esos propósitos.
   </p>
   <p>
     A diferencia de los clásicos e imponentes <%= link_to 'Erowid Experience Vaults', 'https://www.erowid.org/experiences/', target: '_blank' -%>, Psychlopedia usa un sistema abierto de moderación y valuación de experiencias. Somos una vibrante comunidad virtual de individuos, aún en expansión, y pondremos nuestro mejor esfuerzo en explotar el poder de la comunicación. Podés <a href="#">leer más al respecto por acá</a>.
   </p>
   <p>
-    Este proyecto está construído <span class="emphasis">por psiconautas para psiconautas</span>. Si querés compartir cualquier tipo de feedback, por favor: <%= mail_to 'airOnGString@gmail.com', 'escribinos', subject: 'kestapasando' -%>. Nos encantaría conversar con vos.
+    Este proyecto está construído <span class="emphasis">por psiconautas para psiconautas</span>.
+    Nos encanta conversar, y cualquier tipo de feedback es felizmente recibido; por favor,
+      <%= mail_to 'airOnGString@gmail.com', 'no dudes en escribirnos', subject: "kestapasando" -%>.
   </p>
   <p>-5vankmajer</p>
 </div>
