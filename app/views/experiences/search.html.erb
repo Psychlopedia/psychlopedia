@@ -1,0 +1,21 @@
+<div class="search">
+  <%= form_tag(search_path, method: :get) do -%>
+    <%= text_field_tag(:query) -%>
+    <%= submit_tag("Buscar")%>
+  <%- end -%>
+</div>
+<%- unless @results.empty? -%>
+  <% @results.each do |experience| -%>
+    <p class="results-title">Resultados para: <em><%= @query -%></em></p>
+    <li class="experience">
+      <%= l(experience.created_at.to_date, format: :short).upcase -%>
+      <%= link_to (truncate(experience.title, length: 45, omission: '...')), experience_path(experience) -%> por
+      <%= experience.pseudonym -%>
+      </li>
+  <%- end -%>
+<%- else -%>
+  <div class="no-results">
+    <p>No encontramos lo que estás buscando.</p>
+    <p><%= link_to '¿Querés contarnos una experiencia similar, quizá?', new_experience_path, class: 'create' -%></p>
+  </div>
+<%- end -%>

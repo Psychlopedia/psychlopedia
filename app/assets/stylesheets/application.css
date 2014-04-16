@@ -438,3 +438,40 @@ span.enrichment {
 div#experience textarea {
   font-size: 1.2em;
 }
+
+.results-title {
+  margin-bottom: 15px;
+}
+
+.no-results {
+  font-size: 1.2em;
+  margin-top: 8px;
+  text-align: left;
+}
+
+.no-results p {
+  margin-bottom: 5px;
+}
+
+div.search input[type="text"] {
+  height: 15px;
+  width: 350px;
+  display: inline;
+  padding-top: 4px;
+  padding-bottom: 5px;
+}
+
+div.search input[type="submit"] {
+  display: inline;
+  height: 25px;
+  width: 80px;
+}
+
+div.search form {
+  margin-bottom: 0;
+}
+
+.results-title {
+  font-size: 1em;
+  color: silver;
+}

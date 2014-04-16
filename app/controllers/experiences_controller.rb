@@ -51,6 +51,11 @@ class ExperiencesController < ApplicationController
 
   def about; end
 
+  def search
+    @query = params[:query].downcase
+    @results = Experience.search(@query)
+  end
+
   private
 
   def set_experience

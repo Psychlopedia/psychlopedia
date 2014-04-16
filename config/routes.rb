@@ -14,6 +14,7 @@ Psychlopedia::Application.routes.draw do
 
   get 'about', to: 'experiences#about', path: 'kestapasando'
   get 'random', to: 'experiences#random'
+  get 'search', to: 'experiences#search'
 
   root to: 'experiences#index'
 end

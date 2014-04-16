@@ -21,6 +21,15 @@ class Experience < ActiveRecord::Base
     Experience.find Experience.ids.sample
   end
 
+  def self.search(query)
+    ["#{query}%", "%#{query}", "%#{query}%"].each do |query|
+      @results = Experience.where("LOWER(title) LIKE ?", query)
+      break if @results.present?
+    end
+
+    @results ||= []
+  end
+
   def defaults
     self.pseudonym ||= 'anónimo'
     self.title ||= 'sin título'
