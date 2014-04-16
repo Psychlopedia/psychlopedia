@@ -33,7 +33,7 @@ es-AR:
     formats:
       default: ! '%d/%m/%Y'
       long: ! '%A, %-d de %B de %Y'
-      short: ! '%-d %b %Y'
+      short: ! '%d %b %Y'
     month_names:
     -
     - enero
