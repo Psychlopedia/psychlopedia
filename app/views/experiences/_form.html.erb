@@ -28,9 +28,9 @@
   <div class="field cocktail">
     <%= f.fields_for :cocktails do |builder| -%>
       <%= builder.label :substance, 'Sustancia' -%>
-      <%= builder.text_field :substance -%>
+      <%= builder.text_field :substance, placeholder: 'e.g.: Cannabis' -%>
       <%= builder.label :dosage, 'Dosis' -%>
-      <%= builder.text_field :dosage -%>
+      <%= builder.text_field :dosage, placeholder: 'e.g.: Un cigarrillo' -%>
     <%- end -%>
   </div>
 
