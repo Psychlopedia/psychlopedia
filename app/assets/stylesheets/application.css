@@ -486,18 +486,29 @@ div.styles p {
   line-height: 1.25;
 }
 
-div.styles h1, h3 {
+div.styles h4 {
+  font-weight: bold;
   margin-bottom: 15px;
 }
 
+div.styles h4:hover {
+  color: #30EF8E;
+}
+
+div.styles table {
+  float: left;
+  margin-right: 20px;
+}
+
 div.styles table, th, td {
+  font-size: .85em;
   border-collapse: collapse;
   border: 1px solid black;
   margin-bottom: 15px;
 }
 
 div.styles th, td {
-  padding: 5px;
+  padding: 10px 10px;
 }
 
 div.styles dd {
