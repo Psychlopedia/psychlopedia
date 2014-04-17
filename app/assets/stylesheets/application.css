@@ -370,6 +370,7 @@ nav a.guides {
 
 div.about > p {
   margin-bottom: 20px;
+  line-height: 1.25;
 }
 
 div.ratings form {
@@ -474,4 +475,34 @@ div.search form {
 .results-title {
   font-size: 1em;
   color: silver;
+}
+
+div.styles {
+  font-size: 1.2em;
+}
+
+div.styles p {
+  margin-bottom: 15px;
+  line-height: 1.25;
+}
+
+div.styles h1, h3 {
+  margin-bottom: 15px;
+}
+
+div.styles table, th, td {
+  border-collapse: collapse;
+  border: 1px solid black;
+}
+
+div.styles th, td {
+  padding: 5px;
+}
+
+div.styles dd {
+  margin-bottom: 5px;
+}
+
+div.styles dd:last-child {
+  margin-bottom: 20px;
 }
