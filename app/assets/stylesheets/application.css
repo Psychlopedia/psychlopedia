@@ -501,6 +501,7 @@ div.styles th, td {
 
 div.styles dd {
   margin-bottom: 5px;
+  margin-left: 10px;
 }
 
 div.styles dd:last-child {
