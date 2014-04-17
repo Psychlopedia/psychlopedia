@@ -493,6 +493,7 @@ div.styles h1, h3 {
 div.styles table, th, td {
   border-collapse: collapse;
   border: 1px solid black;
+  margin-bottom: 15px;
 }
 
 div.styles th, td {
@@ -506,4 +507,8 @@ div.styles dd {
 
 div.styles dd:last-child {
   margin-bottom: 20px;
+}
+
+div.styles a {
+  border-bottom: 1px solid black;
 }
