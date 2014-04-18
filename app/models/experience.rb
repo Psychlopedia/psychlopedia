@@ -27,7 +27,7 @@ class Experience < ActiveRecord::Base
   end
 
   def self.search(query)
-    ["#{query}%", "%#{query}", "%#{query}%"].each do |query|
+    ["%#{query}", "%#{query}%", "#{query}%"].each do |query|
       @results = Experience.where("LOWER(title) LIKE ?", query)
       break if @results.present?
     end
