@@ -523,3 +523,7 @@ div.styles dd:last-child {
 div.styles a {
   border-bottom: 1px solid black;
 }
+
+li.logo {
+  margin-bottom: 20px;
+}
