@@ -10,7 +10,7 @@
       <%= l(experience.created_at.to_date, format: :short).upcase -%>
       <%= link_to (truncate(experience.title, length: 45, omission: '...')), experience_path(experience) -%> por
       <%= experience.pseudonym -%>
-      </li>
+    </li>
   <%- end -%>
   <%= will_paginate @experiences, page_links: false -%>
 <%- else -%>
