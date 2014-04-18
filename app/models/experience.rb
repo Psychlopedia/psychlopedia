@@ -16,6 +16,11 @@ class Experience < ActiveRecord::Base
 
   serialize :hearts, Hash
 
+  # will_paginate per-page limit
+  def self.per_page
+    10
+  end
+
   def self.random
     return Experience.none unless Experience.exists?
     Experience.find Experience.ids.sample

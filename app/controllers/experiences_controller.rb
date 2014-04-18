@@ -2,7 +2,7 @@ class ExperiencesController < ApplicationController
   before_action :set_experience, only: [:show, :update]
 
   def index
-    @experiences = Experience.all
+    @experiences = Experience.paginate(page: params[:page])
   end
 
   def show; end

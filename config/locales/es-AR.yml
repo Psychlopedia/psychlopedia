@@ -203,3 +203,6 @@ es-AR:
   activerecord:
     errors:
       <<: *errors
+  will_paginate:
+    previous_label: "Atrás"
+    next_label: "Adelante"

@@ -277,6 +277,11 @@ form, fieldset {
   margin-bottom: 20px;
 }
 
+li.experience {
+  font-size: 1.1em;
+  line-height: 1.75;
+}
+
 li.experience a {
   font-size: 1.2em;
   margin: 0 0 3px 0;
@@ -527,3 +532,17 @@ div.styles a {
 li.logo {
   margin-bottom: 20px;
 }
+
+div.pagination {
+  margin-top: 10px;
+}
+
+div.pagination :not(.disabled) {
+  padding: 3px;
+  border: 1px solid black;
+}
+
+div.pagination :not(.disabled):hover {
+  border: 1px solid #30EF8E;
+}
+

@@ -12,6 +12,7 @@
       <%= experience.pseudonym -%>
       </li>
   <%- end -%>
+  <%= will_paginate @experiences, page_links: false -%>
 <%- else -%>
   <div class="no-data">
     <p>Wow. Aún no tenemos experiencias.</p>
