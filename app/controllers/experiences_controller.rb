@@ -13,11 +13,7 @@ class ExperiencesController < ApplicationController
     unless check_rating(rating)
       redirect_to experience_path(@experience), notice: 'La valuación va del 1 al 5. Por favor, intentá puntuar nuevamente.'
     else
-      if @experience.hearts[rating].nil?
-        @experience.hearts[rating] = 1
-      else
-        @experience.hearts[rating] += 1
-      end
+      @experience.hearts[rating].nil? ? @experience.hearts[rating] = 1 : @experience.hearts[rating] += 1
 
       if @experience.save
         redirect_to experience_path(@experience), notice: '¡La experiencia ha sido puntuada!'
