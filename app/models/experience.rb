@@ -26,13 +26,16 @@ class Experience < ActiveRecord::Base
     Experience.find Experience.ids.sample
   end
 
+  # XXX: a poor's man (and a poor's mind) search engine.
   def self.search(query)
+    @results = []
     ["%#{query}", "%#{query}%", "#{query}%"].each do |query|
-      @results = Experience.where("LOWER(title) LIKE ?", query)
-      break if @results.present?
+      ["title", "pseudonym"].each do |field|
+        candidates = Experience.where("LOWER(#{field}) LIKE ?", query)
+        @results << candidates unless candidates.empty?
+      end
     end
-
-    @results ||= []
+    @results.flatten.uniq
   end
 
   def defaults

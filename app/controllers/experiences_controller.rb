@@ -54,7 +54,7 @@ class ExperiencesController < ApplicationController
   def style_guide; end
 
   def search
-    @query = params[:query].downcase
+    @query = params[:query].downcase.parameterize
     @results = Experience.search(@query)
   end
 
