@@ -18,7 +18,7 @@ class Experience < ActiveRecord::Base
 
   # will_paginate per-page limit
   def self.per_page
-    20
+    15
   end
 
   def self.random
