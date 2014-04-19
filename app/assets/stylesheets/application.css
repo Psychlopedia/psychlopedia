@@ -75,7 +75,7 @@ table {
 body {
   font-family: Helvetica, Lucida Console, monospace;
   font-size: 1em;
-  background-color: #F9F9F9;
+  background-image: url('background.png');
   color: #333;
   padding: 25px;
 }
