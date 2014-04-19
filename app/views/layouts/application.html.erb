@@ -17,7 +17,7 @@
       <nav>
         <ul>
           <%- if action_name == 'about'-%>
-            <li class="logo"><%= image_tag("logo.gif", width: 100, height: 100, title: "Psychlopedia") -%></li>
+            <li class="logo"><%= image_tag("logo.gif", title: "Psychlopedia") -%></li>
           <%- end -%>
           <li><%= link_to 'Experiencias', experiences_path, accesskey: 'e' -%></li>
           <li><%= link_to 'Al azar', random_url, accesskey: 'r' -%></li>
