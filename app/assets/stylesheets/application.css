@@ -76,6 +76,7 @@ body {
   font-family: Helvetica, Lucida Console, monospace;
   font-size: 1em;
   background-image: url('background.png');
+  background-attachment: fixed;
   color: #333;
   padding: 25px;
 }
