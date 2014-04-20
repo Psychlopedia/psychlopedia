@@ -45,18 +45,10 @@ class ExperiencesController < ApplicationController
     end
   end
 
-  def about; end
-
-  def style_guide; end
-
   def search
     @query = params[:query].downcase.parameterize
     @results = Experience.search(@query)
   end
-
-  def disclaimer; end
-
-  def privacy; end
 
   private
 
