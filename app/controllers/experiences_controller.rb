@@ -54,6 +54,10 @@ class ExperiencesController < ApplicationController
     @results = Experience.search(@query)
   end
 
+  def disclaimer; end
+
+  def privacy; end
+
   private
 
   def set_experience

@@ -546,3 +546,23 @@ div.pagination :not(.disabled):hover {
   border: 1px solid #30EF8E;
 }
 
+.footnotes a {
+  font-size: .8em;
+  text-decoration: none;
+}
+
+div.disclaimer {
+  font-size: 1.2em;
+}
+
+div.disclaimer p {
+  margin-bottom: 20px;
+}
+
+div.disclaimer p.bald {
+  font-weight: bold;
+}
+
+div.disclaimer p.bald > span {
+  text-decoration: underline;
+}
