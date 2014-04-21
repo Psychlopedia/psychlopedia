@@ -8,7 +8,7 @@
       ev.stopPropagation();
       ev.preventDefault();
 
-      $("div.cocktail").toggle();
+      $("div.extra").toggle();
     });
 
     var substances = [

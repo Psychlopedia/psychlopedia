@@ -422,12 +422,12 @@ h2 {
   font-size: .9em;
 }
 
-div.cocktail {
+div.extra {
   display: none;
 }
 
-div.cocktail input {
-  width: 125px;
+div.extra input {
+  width: 175px;
 }
 
 div#experience {
@@ -599,4 +599,11 @@ div.privacy a {
 
 .anon-links {
   font-weight: bold;
+}
+
+div.set-and-setting p {
+  width: 75%;
+  font-size: .9em;
+  text-align: justify;
+  margin-bottom: 20px;
 }
