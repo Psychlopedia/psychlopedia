@@ -19,6 +19,9 @@
         <ul>
           <%- if action_name == 'about'-%>
             <li class="logo"><%= image_tag("logo.gif", title: "Psychlopedia") -%></li>
+            <!--
+              This awesome piece of work belongs to Matthew DiVito, a.k.a. mr. div. Please, do visit his blog: http://mrdiv.tumblr.com
+            -->
           <%- end -%>
           <li><%= link_to 'Experiencias', experiences_path, accesskey: 'e' -%></li>
           <li><%= link_to 'Al azar', random_url, accesskey: 'r' -%></li>
