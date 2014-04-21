@@ -8,7 +8,9 @@ class Experience < ActiveRecord::Base
 
   friendly_id :title, use: :slugged
 
-  validates :body, uniqueness: true, presence: true
+  validates :pseudonym, presence: true, length: { maximum: 25 }
+  validates :title, presence: true
+  validates :body, presence: true
 
   before_save :defaults
 
