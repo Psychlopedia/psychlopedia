@@ -509,6 +509,15 @@ div.disclaimer h3:hover {
   color: #30EF8E;
 }
 
+div.privacy h3, h4 {
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+div.privacy h3:hover {
+  color: #30EF8E;
+}
+
 div.styles table {
   float: left;
   margin-right: 20px;
@@ -574,4 +583,20 @@ div.disclaimer p.bald {
 
 div.disclaimer p.bald > span {
   text-decoration: underline;
+}
+
+div.privacy {
+  font-size: 1.2em;
+}
+
+div.privacy p {
+  margin-bottom: 20px;
+}
+
+div.privacy a {
+  border-bottom: 1px solid black;
+}
+
+.anon-links {
+  font-weight: bold;
 }
