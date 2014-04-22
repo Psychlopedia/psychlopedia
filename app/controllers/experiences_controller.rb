@@ -57,9 +57,8 @@ class ExperiencesController < ApplicationController
   end
 
   def experience_params
-    experience = params.require(:experience)
-    attributes = [:pseudonym, :title, :body, :set, :setting].reject { |attribute| experience[attribute].blank? }
-    experience.permit(*attributes)
+    permitted = params.require(:experience).permit(:title, :pseudonym, :body, :set, :setting, cocktails_attributes: [:substance, :dosage])
+    permitted.delete_if { |key, value| value.blank? }
   end
 
   def check_rating(rating)
