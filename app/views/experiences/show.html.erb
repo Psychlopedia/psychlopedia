@@ -21,6 +21,9 @@
     <div class="etxt">
       <%= markdown(@experience.body) -%>
     </div>
+    <div class="licensing">
+      <a rel="license" href="http://creativecommons.org/licenses/by/4.0/deed.es" title="Esta obra está bajo una Licencia Creative Commons Atribución 4.0 Internacional" target="_blank"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by/4.0/88x31.png" /></a><br />
+    </div>
     <div class="ratings">
       <%= form_for @experience do |f| -%>
         <%= f.label :hearts, 'Calificá esta experiencia (1 al 5): ' -%>
