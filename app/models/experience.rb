@@ -43,6 +43,7 @@ class Experience < ActiveRecord::Base
   def defaults
     self.pseudonym ||= 'anónimo'
     self.title ||= 'sin título'
+    self.license = 'CC BY 4.0' if self.is_licensed
   end
 
   def human_readable_rating

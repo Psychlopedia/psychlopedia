@@ -63,6 +63,14 @@
     <%= f.text_area :body, cols: 40, rows: 20, required: true %>
   </div>
 
+  <div class="field license">
+    <%= f.check_box :is_licensed -%>
+    Licenciar bajo
+    <span class="emphasis">
+      <%= link_to 'Creative Commons Atribución Internacional 4.0', 'http://creativecommons.org/licenses/by/4.0/deed.es', target: '_blank' -%>
+    </span>
+  </div>
+
   <div class="field">
     <%= gotcha_error %>
     <%= gotcha %>
