@@ -9,14 +9,14 @@
     <h3 class="whoandwhen"><%= @experience.pseudonym -%> &#8669; <%= l @experience.created_at.to_date, format: :long -%></h3>
     <%- if @experience.cocktails.present? -%>
       <%- @cocktail = @experience.cocktails.first -%>
-      <h4>Sustancia: <%= @cocktail.substance -%></h4>
-      <h4>Dosis: <%= @cocktail.dosage -%></h4>
+      <p style="font-size:1em;"><span class="emphasis">Sustancia:</span> <%= @cocktail.substance -%></p>
+      <p style="font-size:1em;"><span class="emphasis">Dose:</span> <%= @cocktail.dosage -%></p>
     <%- end -%>
     <%- if @experience.set.present? -%>
-      <h4>Set: <%= @experience.set -%></h4>
+      <p style="font-size:1em;"><span class="emphasis">Set:</span> <%= @experience.set -%></p>
     <%- end -%>
     <%- if @experience.setting.present? -%>
-      <h4>Setting: <%= @experience.setting -%></h4>
+      <p style="font-size:1em;margin-bottom:20px;"><span class="emphasis">Setting:</span> <%= @experience.setting -%></p>
     <%- end -%>
     <div class="etxt">
       <%= markdown(@experience.body) -%>
