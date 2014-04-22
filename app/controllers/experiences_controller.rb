@@ -58,7 +58,7 @@ class ExperiencesController < ApplicationController
 
   def experience_params
     experience = params.require(:experience)
-    attributes = [:pseudonym, :title, :body].reject { |attribute| experience[attribute].blank? }
+    attributes = [:pseudonym, :title, :body, :set, :setting].reject { |attribute| experience[attribute].blank? }
     experience.permit(*attributes)
   end
 

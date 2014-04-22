@@ -6,7 +6,11 @@
     <div class="thingo">
       <h1 class="title"><%= @experience.title -%></h1><h2><%= @experience.human_readable_rating -%></h2>
     </div>
-    <h3 class="whoandwhen"><%= @experience.pseudonym -%> &#8669; <%= l @experience.created_at.to_date, format: :long %></h3>
+    <h3 class="whoandwhen"><%= @experience.pseudonym -%> &#8669; <%= l @experience.created_at.to_date, format: :long -%></h3>
+    <%- if @experience.set.present? && @experience.setting.present? -%>
+      <h4>Set: <%= @experience.set -%></h4>
+      <h4>Setting: <%= @experience.setting -%></h4>
+    <%- end -%>
     <div class="etxt">
       <%= markdown(@experience.body) -%>
     </div>
