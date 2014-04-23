@@ -16,8 +16,9 @@ gem 'jbuilder', '~> 1.2'
 
 gem 'thread_safe', github: 'headius/thread_safe'
 
+gem 'pry'
+
 group :development, :test do
-  gem 'pry'
   gem 'rspec-rails'
   gem 'thin'
 end
