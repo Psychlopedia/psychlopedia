@@ -23,7 +23,7 @@
     </div>
     <%- if @experience.source.present? && @experience.source != 'psychlopedia' -%>
       <div class="source">
-        <p><%= @experience.source -%></p>
+        <p>Fuente: <%= @experience.source -%></p>
       </div>
     <%- end -%>
     <% if @experience.is_licensed -%>
