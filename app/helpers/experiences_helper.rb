@@ -7,4 +7,8 @@ module ExperiencesHelper
   def titleize(title)
     title.split.map(&:capitalize).join(' ')
   end
+
+  def image_url(image_name)
+    URI.join(root_url, image_path(image_name))
+  end
 end
