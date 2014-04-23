@@ -44,6 +44,7 @@ class Experience < ActiveRecord::Base
     self.pseudonym ||= 'anónimo'
     self.title ||= 'sin título'
     self.license = 'CC BY 4.0' if self.is_licensed
+    self.publication_date = Date.today
   end
 
   def human_readable_rating
