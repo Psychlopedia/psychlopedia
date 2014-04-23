@@ -1,7 +1,5 @@
 class ExperiencesController < ApplicationController
   before_action :set_experience, only: [:show, :update]
-  before_filter :has_permission_to_vote_on, only: [:update]
-
 
   def index
     @experiences = Experience.paginate(page: params[:page])
@@ -10,8 +8,8 @@ class ExperiencesController < ApplicationController
   def show; end
 
   def update
-    unless has_permission_to_vote_on(@experience)
-      redirect_to @experience, notice: 'Ya hemos tomado tus 5 votos diarios.'
+    unless has_permission_to_vote
+      redirect_to @experience, notice: 'Ya hemos tomado tus 5 votos diarios.' and return
     end
 
     rating = params[:experience][:hearts].to_i
@@ -71,17 +69,18 @@ class ExperiencesController < ApplicationController
     (1..5).include?(rating)
   end
 
-  def has_permission_to_vote_on(experience)
+  def has_permission_to_vote
     unless cookies.signed[:votes_left].present?
-      cookies.signed[:votes_left] = { votes: 5, expires: 24.hours.from_now }
+      cookies.signed[:votes_left] = { value: 5, expires: 24.hours.from_now }
+    end
+
+    available_votes = cookies.signed[:votes_left]
+
+    if !available_votes.zero? && available_votes <= 5
+      cookies.signed[:votes_left] -= 1
+      return true
     else
-      available_votes = cookies.signed[:votes_left][:votes]
-      if !available_votes.zero? && available_votes <= 5
-        cookies.signed[:votes_left][:votes] -= 1
-        return true
-      else
-        return false
-      end
+      return false
     end
   end
 end
