@@ -21,7 +21,7 @@
     <div class="etxt">
       <%= markdown(@experience.body) -%>
     </div>
-    <%- if @experience.source.present? -%>
+    <%- if @experience.source.present? && @experience.source != 'psychlopedia' -%>
       <div class="source">
         <p><%= @experience.source -%></p>
       </div>
