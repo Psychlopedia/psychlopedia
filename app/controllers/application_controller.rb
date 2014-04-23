@@ -1,7 +1,8 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
-  before_filter :check_first_timer
+  # XXX: i'll find another way...
+  # before_filter :check_first_timer
 
   private
 
