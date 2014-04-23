@@ -382,10 +382,14 @@ div.ratings form {
   margin-bottom: -15px;
 }
 
-div.licensing {
+div.source {
   margin-bottom: 20px;
   font-size: .9em;
   font-style: italic;
+}
+
+div.licensing {
+  margin-bottom: 20px;
 }
 
 div.ratings input[type="number"] {
