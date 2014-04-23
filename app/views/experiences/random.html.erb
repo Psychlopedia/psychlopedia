@@ -1,7 +1,7 @@
 <%- if @experience.present? -%>
   <div>
     <div class="thingo">
-      <h1 class="title"><%= @experience.title -%></h1><h2><%= @experience.human_readable_rating -%></h2>
+      <h1 class="title"><%= titleize(@experience.title) -%></h1><h2><%= @experience.human_readable_rating -%></h2>
     </div>
     <h3 class="whoandwhen"><%= @experience.pseudonym -%> &#8669; <%= l @experience.created_at.to_date, format: :long %></h3>
     <div class="etxt">
