@@ -1,7 +1,11 @@
 Psychlopedia::Application.routes.draw do
-  # experiences
+  # the experiences
   scope(path_names: {new: 'nueva'}) do
-    resources :experiences, path: 'experiencias'
+    resources :experiences, path: 'experiencias' do
+      member do
+        get 'categorize', action: 'categorize', as: 'categorize'
+      end
+    end
   end
 
   get 'random', to: 'experiences#random'

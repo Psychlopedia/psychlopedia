@@ -3,6 +3,9 @@
 class Experience < ActiveRecord::Base
   extend FriendlyId
 
+  has_many :experience_categories
+  has_many :categories, through: :experience_categories
+
   has_many :cocktails, dependent: :destroy
   accepts_nested_attributes_for :cocktails, reject_if: lambda { |cocktail| cocktail[:substance].blank? && cocktail[:dosage].blank? }
 
@@ -54,5 +57,9 @@ class Experience < ActiveRecord::Base
       black_stars = self.hearts.max_by { |stars, quantity| quantity }.first.to_i
       (('&#9733;' * black_stars) + ('&#9734;' * (5 - black_stars))).html_safe
     end
+  end
+
+  def categories_used
+    self.categories.map(&:name).join(', ')
   end
 end

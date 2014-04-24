@@ -40,5 +40,22 @@
     $("input[id$='substance']").autocomplete({
       source: substances
     });
+
+    $("select").change(function(ev) {
+      var form = $('form.category');
+      var selectedCategory = form.serialize();
+
+      $(this).prop("disabled", true);
+
+      $.ajax({
+        url: $(form).attr('action'),
+        data: selectedCategory,
+        dataType: "JSON"
+      }).success(function(json) {
+        form.html("¡Gracias por tu feedback!");
+      });
+
+      return false;
+    });
   });
 })(jQuery);
