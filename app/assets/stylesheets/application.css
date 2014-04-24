@@ -628,3 +628,7 @@ div.license input {
   -o-transform: scale(1.5, 1.5); /* Opera */
   padding: 10px;
 }
+
+div.disclaimer, div.privacy, div.about, div.styles {
+  text-align: justify;
+}
