@@ -54,6 +54,9 @@ class ExperiencesController < ApplicationController
     @results = Experience.search(@query)
   end
 
+  # XXX: finish this.
+  def categorize; end
+
   private
 
   def set_experience

@@ -41,6 +41,12 @@
         <%= f.submit 'Puntuar' -%>
       <%- end -%>
     </div>
+    <div class="category" style="margin-top:20px;margin-bottom:20px;font-size:1em;">
+      <%= form_for @experience, html: { class: 'category' } do |f| -%>
+        <%= f.label :categories, '¿En qué categoría lo pondrías? (Opcional)' -%>
+        <%= f.select 'categories', options_for_select(['Primeras Veces', 'Malos Viajes', 'Experiencias Increíbles']), prompt: 'Seleccioná una...' -%>
+      <%- end -%>
+    </div>
     <div id="comments">
       <div id="disqus_thread"></div>
       <script type="text/javascript">
