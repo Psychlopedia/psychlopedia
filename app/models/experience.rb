@@ -47,6 +47,20 @@ class Experience < ActiveRecord::Base
     self.publication_date = Date.today
   end
 
+  def numeric_rating
+    total_n_of_reviews = []
+    weight_dot_n_reviews = self.hearts.inject([]) do |r, (k, v)|
+      total_n_of_reviews << v
+      r << (k * v.to_f)
+      r
+    end
+    if total_n_of_reviews.sum.zero?
+      return 0.0
+    else
+      weight_dot_n_reviews.sum / total_n_of_reviews.sum
+    end
+  end
+
   def human_readable_rating
     if self.hearts.empty?
       ('&#9734;' * 5).html_safe
