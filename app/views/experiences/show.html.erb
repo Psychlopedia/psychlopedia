@@ -10,7 +10,7 @@
     <%- if @experience.cocktails.present? -%>
       <%- @cocktail = @experience.cocktails.first -%>
       <p style="font-size:1em;"><span class="emphasis">Sustancia:</span> <%= @cocktail.substance -%></p>
-      <p style="font-size:1em;"><span class="emphasis">Dose:</span> <%= @cocktail.dosage -%></p>
+      <p style="font-size:1em;"><span class="emphasis">Dosis:</span> <%= @cocktail.dosage -%></p>
     <%- end -%>
     <%- if @experience.set.present? -%>
       <p style="font-size:1em;"><span class="emphasis">Set:</span> <%= @experience.set -%></p>
