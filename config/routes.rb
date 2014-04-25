@@ -12,5 +12,9 @@ Psychlopedia::Application.routes.draw do
   get 'legal', to: 'infrastructure#legal', path: 'legal'
   get 'privacy', to: 'infrastructure#privacy', path: 'privacidad'
 
+  get 'admin', to: 'god#index', path: 'admin'
+
+  resource :session, only: [:new, :create, :destroy]
+
   root to: 'experiences#index'
 end

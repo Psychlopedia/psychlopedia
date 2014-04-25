@@ -9,4 +9,8 @@
 
 # Make sure your secret_key_base is kept private
 # if you're sharing your code publicly.
-Psychlopedia::Application.config.secret_key_base = '4d50dae3db4019c09ae4c725b12988eba21700a9a3226e1ad6f331f6e2463342a448ce93fa1fc383dd101667e86aaa1764eede8b3c902c6ae1acc20eaa9430c0'
+Psychlopedia::Application.config.secret_key_base = if Rails.env.development?
+                                                   ('h' * 30)
+                                                   else
+                                                     ENV['SECRET_KEY_BASE']
+                                                   end

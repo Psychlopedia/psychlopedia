@@ -1,0 +1,18 @@
+<h1>Experiencias</h1>
+
+<table style="margin-top:20px;">
+  <tbody>
+    <% @experiences.each do |experience| -%>
+      <tr>
+        <td><span class="emphasis"><%= experience.title -%></span></td>
+        <td><%= link_to 'Ver', experience -%></td>
+        <td><%= link_to 'Editar', edit_experience_path(experience) -%></td>
+        <td><%= link_to 'Eliminar', experience, method: :delete, data: { confirm: '¿Estás seguro?' }, style: "color:red;" -%></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'Nueva Experiencia', new_experience_path -%> | <%= link_to 'Salir', session_path, method: :delete, data: { confirm: '¿Salir?' } -%>

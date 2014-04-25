@@ -1,5 +1,6 @@
 class ExperiencesController < ApplicationController
-  before_action :set_experience, only: [:show, :update]
+  before_action :set_experience, only: [:show, :update, :edit, :destroy]
+  before_action :check_admin, only: [:edit, :destroy]
 
   def index
     @experiences = Experience.paginate(page: params[:page])
@@ -8,21 +9,33 @@ class ExperiencesController < ApplicationController
   def show; end
 
   def update
-    unless has_permission_to_vote
-      redirect_to @experience, notice: 'Ya hemos tomado tus 5 votos diarios.' and return
-    end
+    if params[:experience][:hearts].present?
+      # vote registered
+      unless has_permission_to_vote
+        redirect_to(@experience, notice: 'Ya hemos tomado tus 5 votos diarios.') and return
+      end
 
-    rating = params[:experience][:hearts].to_i
+      rating = sanitize_rating(params[:experience][:hearts])
 
-    unless check_rating(rating)
-      redirect_to experience_path(@experience), notice: 'La valuación va del 1 al 5. Por favor, intentá puntuar nuevamente.'
-    else
-      @experience.hearts[rating].nil? ? @experience.hearts[rating] = 1 : @experience.hearts[rating] += 1
+      if @experience.hearts[rating].blank?
+        @experience.hearts[rating] = 1
+      else
+        @experience.hearts[rating] += 1
+      end
 
       if @experience.save
-        redirect_to experience_path(@experience), notice: '¡La experiencia ha sido puntuada!'
+        redirect_to(@experience, notice: '¡Gracias, la experiencia ha sido puntuada!') and return
       else
-        redirect_to experience_path(@experience), notice: 'No se ha podido puntuar la experiencia. ¿Probarías de nuevo?'
+        redirect_to(@experience, notice: 'No se ha podido puntuar la experiencia. ¿Intentarías de nuevo?') and return
+      end
+    else
+      # normal administrative flow
+      redirect_to(@experience, notice: 'Epa epa.') and return unless logged_in?
+
+      if @experience.update(experience_params)
+        redirect_to(@experience, notice: 'La experiencia se actualizó exitosamente.') and return
+      else
+        redirect_to(@experience, notice: 'La experiencia no pudo actualizarse. ¿Intentaría de nuevo?') and return
       end
     end
   end
@@ -54,6 +67,17 @@ class ExperiencesController < ApplicationController
     @results = Experience.search(@query)
   end
 
+  # administrative actions
+
+  def edit
+    @experience.cocktails.build if @experience.cocktails.empty?
+  end
+
+  def destroy
+    @experience.destroy
+    redirect_to admin_path
+  end
+
   private
 
   def set_experience
@@ -61,12 +85,14 @@ class ExperiencesController < ApplicationController
   end
 
   def experience_params
-    permitted = params.require(:experience).permit(:title, :pseudonym, :body, :set, :setting, :is_licensed, cocktails_attributes: [:substance, :dosage])
+    permitted = params.require(:experience).permit(:title, :pseudonym, :body, :set, :setting, :is_licensed, cocktails_attributes: [:id, :substance, :dosage])
     permitted.delete_if { |key, value| value.blank? }
   end
 
-  def check_rating(rating)
-    (1..5).include?(rating)
+  def sanitize_rating(rating)
+    rating = rating.to_i
+    result = (1..5).include?(rating) ? rating : false
+    result
   end
 
   def has_permission_to_vote
@@ -82,5 +108,9 @@ class ExperiencesController < ApplicationController
     else
       return false
     end
+  end
+
+  def check_admin
+    redirect_to experiences_path unless logged_in?
   end
 end
