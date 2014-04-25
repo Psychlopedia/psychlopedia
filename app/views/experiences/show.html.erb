@@ -12,17 +12,19 @@
       <h2 style="font-size:1.2em;padding-top:4px;">(<%= @experience.numeric_rating -%>)</h2>
     </div>
     <h3 class="whoandwhen"><%= @experience.pseudonym -%> &#8669; <%= l @experience.created_at.to_date, format: :long -%></h3>
-    <%- if @experience.cocktails.present? -%>
-      <%- @cocktail = @experience.cocktails.first -%>
-      <p style="font-size:1em;"><span class="emphasis">Sustancia:</span> <%= @cocktail.substance -%></p>
-      <p style="font-size:1em;"><span class="emphasis">Dosis:</span> <%= @cocktail.dosage -%></p>
-    <%- end -%>
-    <%- if @experience.set.present? -%>
-      <p style="font-size:1em;"><span class="emphasis">Set:</span> <%= @experience.set -%></p>
-    <%- end -%>
-    <%- if @experience.setting.present? -%>
-      <p style="font-size:1em;margin-bottom:20px;"><span class="emphasis">Setting:</span> <%= @experience.setting -%></p>
-    <%- end -%>
+    <div style="margin-bottom:20px;">
+      <%- if @experience.cocktails.present? -%>
+        <%- @cocktail = @experience.cocktails.first -%>
+        <p style="font-size:1em;"><span class="emphasis">Sustancia:</span> <%= @cocktail.substance -%></p>
+        <p style="font-size:1em;"><span class="emphasis">Dosis:</span> <%= @cocktail.dosage -%></p>
+      <%- end -%>
+      <%- if @experience.set.present? -%>
+        <p style="font-size:1em;"><span class="emphasis">Set:</span> <%= @experience.set -%></p>
+      <%- end -%>
+      <%- if @experience.setting.present? -%>
+        <p style="font-size:1em;"><span class="emphasis">Setting:</span> <%= @experience.setting -%></p>
+      <%- end -%>
+    </div>
     <div class="etxt">
       <%= markdown(@experience.body) -%>
     </div>
