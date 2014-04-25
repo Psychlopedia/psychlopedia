@@ -57,7 +57,7 @@ class Experience < ActiveRecord::Base
     if total_n_of_reviews.sum.zero?
       return 0.0
     else
-      weight_dot_n_reviews.sum / total_n_of_reviews.sum
+      (weight_dot_n_reviews.sum / total_n_of_reviews.sum).round(2)
     end
   end
 
