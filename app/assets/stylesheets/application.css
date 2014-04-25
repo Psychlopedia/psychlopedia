@@ -632,3 +632,7 @@ div.license input {
 div.disclaimer, div.privacy, div.about, div.styles {
   text-align: justify;
 }
+
+.etxt a {
+  text-decoration: underline;
+}
