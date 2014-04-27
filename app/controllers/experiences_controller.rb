@@ -20,9 +20,9 @@ class ExperiencesController < ApplicationController
       end
 
       if @experience.save
-        redirect_to(@experience, notice: '¡Gracias, la experiencia ha sido puntuada!') and return
+        redirect_to @experience, notice: '¡Gracias, la experiencia ha sido puntuada!'
       else
-        redirect_to(@experience, notice: 'No se ha podido puntuar la experiencia. ¿Intentarías de nuevo?') and return
+        render action: 'edit'
       end
     else
       # normal administrative flow
