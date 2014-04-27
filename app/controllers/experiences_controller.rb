@@ -1,6 +1,7 @@
 class ExperiencesController < ApplicationController
   before_action :set_experience, only: [:show, :update, :edit, :destroy]
   before_action :check_admin, only: [:edit, :destroy]
+  before_action :has_permission_to_vote, only: [:update]
 
   def index
     @experiences = Experience.paginate(page: params[:page])
@@ -10,11 +11,6 @@ class ExperiencesController < ApplicationController
 
   def update
     if params[:experience][:hearts].present?
-      # vote registered
-      unless has_permission_to_vote
-        redirect_to(@experience, notice: 'Ya hemos tomado tus 5 votos diarios.') and return
-      end
-
       rating = sanitize_rating(params[:experience][:hearts])
 
       if @experience.hearts[rating].blank?
@@ -106,7 +102,7 @@ class ExperiencesController < ApplicationController
       cookies.signed[:votes_left] -= 1
       return true
     else
-      return false
+      redirect_to experiences_path, notice: 'Ya hemos tomado tus 5 votos diarios.'
     end
   end
 

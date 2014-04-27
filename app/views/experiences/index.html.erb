@@ -1,4 +1,7 @@
 <%- unless @experiences.empty? -%>
+  <%- if flash[:notice] -%>
+    <p class="notice"><%= flash[:notice] -%></p>
+  <%- end -%>
   <div class="search">
     <%= form_tag(search_path, method: :get) do -%>
       <%= text_field_tag(:query) -%>
