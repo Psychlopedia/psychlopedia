@@ -25,10 +25,7 @@ class ExperiencesController < ApplicationController
         render action: 'edit'
       end
     else
-      # normal administrative flow
-      redirect_to(@experience, notice: 'Epa epa.') and return unless logged_in?
-
-      if @experience.update(experience_params)
+      if logged_in && @experience.update(experience_params)
         redirect_to @experience, notice: 'La experiencia se actualizó exitosamente.'
       else
         render action: 'edit'
