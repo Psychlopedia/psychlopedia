@@ -11,19 +11,7 @@ class ExperiencesController < ApplicationController
 
   def update
     if params[:experience][:hearts].present?
-      rating = sanitize_rating(params[:experience][:hearts])
-
-      if @experience.hearts[rating].blank?
-        @experience.hearts[rating] = 1
-      else
-        @experience.hearts[rating] += 1
-      end
-
-      if @experience.save
-        redirect_to @experience, notice: '¡Gracias, la experiencia ha sido puntuada!'
-      else
-        render action: 'edit'
-      end
+      rate_experience(params[:experience][:hearts])
     else
       if logged_in && @experience.update(experience_params)
         redirect_to @experience, notice: 'La experiencia se actualizó exitosamente.'
@@ -82,12 +70,6 @@ class ExperiencesController < ApplicationController
     permitted.delete_if { |key, value| value.blank? }
   end
 
-  def sanitize_rating(rating)
-    rating = rating.to_i
-    result = (1..5).include?(rating) ? rating : false
-    result
-  end
-
   def has_permission_to_vote
     unless cookies.signed[:votes_left].present?
       cookies.signed[:votes_left] = { value: 5, expires: 24.hours.from_now }
@@ -105,5 +87,27 @@ class ExperiencesController < ApplicationController
 
   def check_admin
     redirect_to experiences_path unless logged_in?
+  end
+
+  def sanitize_rating(rating)
+    rating = rating.to_i
+    result = (1..5).include?(rating) ? rating : false
+    result
+  end
+
+  def rate_experience(rating)
+    rating = sanitize_rating(rating)
+
+    if @experience.hearts[rating].blank?
+      @experience.hearts[rating] = 1
+    else
+      @experience.hearts[rating] += 1
+    end
+
+    if @experience.save
+      redirect_to @experience, notice: '¡Gracias, la experiencia ha sido puntuada!'
+    else
+      render action: 'edit'
+    end
   end
 end
