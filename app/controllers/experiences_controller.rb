@@ -90,9 +90,7 @@ class ExperiencesController < ApplicationController
   end
 
   def sanitize_rating(rating)
-    rating = rating.to_i
-    result = (1..5).include?(rating) ? rating : false
-    result
+    (1..5).include? rating.to_i
   end
 
   def rate_experience(rating)
