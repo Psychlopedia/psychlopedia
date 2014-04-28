@@ -47,24 +47,33 @@ class Experience < ActiveRecord::Base
 
   def numeric_rating
     total_n_of_reviews = []
-    weight_dot_n_reviews = self.hearts.inject([]) do |r, (k, v)|
-      total_n_of_reviews << v
-      r << (k * v.to_f)
-      r
+
+    weight_dot_n_reviews = self.hearts.inject([]) do |weights, (rating, amount)|
+      total_n_of_reviews << amount
+      weights << (rating * amount).to_f
+      weights
     end
+
     if total_n_of_reviews.sum.zero?
       return 0.0
     else
-      (weight_dot_n_reviews.sum / total_n_of_reviews.sum).round(2)
+      result = (weight_dot_n_reviews.sum / total_n_of_reviews.sum)
+      result.round(2)
     end
   end
 
   def human_readable_rating
     if self.hearts.empty?
-      ('&#9734;' * 5).html_safe
+      five_white_stars = ('&#9734;' * 5)
+      five_white_stars.html_safe
     else
       black_stars = self.hearts.max_by { |stars, quantity| quantity }.first.to_i
-      (('&#9733;' * black_stars) + ('&#9734;' * (5 - black_stars))).html_safe
+
+      n_of_black_stars = ('&#9733;' * black_stars)
+      n_of_white_stars = ('&#9734;' * (5 - black_stars))
+
+      star_rating = n_of_black_stars + n_of_white_stars
+      star_rating.html_safe
     end
   end
 end
