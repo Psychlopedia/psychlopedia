@@ -20,4 +20,33 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  menu:
+    experiences: Experiences
+    random: Random
+    add: Add
+    style_guide: Style Guide
+    what_is_this: What is this?
+    legal: Legal
+    privacy: Privacy
+  experiences:
+    search: Search
+    no_data: Oh, snap. We currently have zero experiences!
+    no_data_invitation: Would you like to start sharing yours?
+    addition:
+      title: Title
+      pseudonym: Pseudonym
+      body: Tell us your experience
+      more_information:
+        legend: Click here if you want to add more information
+        substance: Substance
+        substance_placeholder: e.g. Cannabis
+        dosage: Dosage
+        dosage_placeholder: e.g. 1g
+        set: Set
+        setting: Setting
+      submit: Save experience
+      markdown_formatting_html: 'You can use <span class="emphasis">%{link}</span> to format your experiences.'
+      license_html: 'License under <span class="emphasis">%{link}</span>'
+      cc_license_type: 'Creative Commons International Attribution 4.0'
+      set_setting_short_description: Set & Setting refers to the internal and external contexts of the experience.
+      set_setting_long_description_html: "<span class='emphasis'>Set</span> is the state of mind an individual carries to the experience (i.e. thoughts, mood and expectations, among many other things). <span class='emphasis'>Setting</span> is the physical, social and emotional environment that surrounds the experience (i.e te weather, people's feelings about one another and dominant perspectives about what is real)."

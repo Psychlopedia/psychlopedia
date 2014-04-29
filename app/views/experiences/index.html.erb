@@ -5,7 +5,7 @@
   <div class="search">
     <%= form_tag(search_path, method: :get) do -%>
       <%= text_field_tag(:query) -%>
-      <%= submit_tag("Buscar")%>
+      <%= submit_tag t('experiences.search') -%>
     <%- end -%>
   </div>
   <% @experiences.each do |experience| -%>
@@ -18,7 +18,7 @@
   <%= will_paginate @experiences, page_links: false -%>
 <%- else -%>
   <div class="no-data">
-    <p>Wow. Aún no tenemos experiencias.</p>
-    <p><%= link_to '¿Querés empezar por contarnos la tuya?', new_experience_path, class: 'create' -%></p>
+    <p><%= t('experiences.no_data') -%></p>
+    <p><%= link_to t('experiences.no_data_invitation'), new_experience_path, class: 'create' -%></p>
   </div>
 <%- end -%>
