@@ -1,47 +1,47 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>Psychlopedia</title>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-  <meta name="description" content="Psychlopedia es un archivo digital de experiencias bajo estados alterados de la conciencia.">
-  <meta name="keywords" content="psychedelics psychedelic experience pharmacovigillance storytelling harm reduction psicodelica psicodelicos experiencia">
-  <meta name="author" content="5vankmajer">
-  <meta name="viewport" content="device-width, initial-scale=.5, user-scalable=no">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://psychlopedia.herokuapp.com">
-  <meta property="og:title" content="Psychlopedia - El archivo digital de experiencias bajo estados alterados de la conciencia.">
-  <meta property="og:image" content="<%= image_url('logo.gif') -%>">
-  <meta property="og:site_name" content="Psychlopedia">
-  <meta property="og:description" content="Psychlopedia es un archivo de experiencias bajo estados alterados de la conciencia en español. Nuestra intención es convertirnos en una herramienta confiable de educación y farmacovigilancia que asista al ejercicio seguro de la psiconáutica.">
-  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
-  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
-  <%= csrf_meta_tags %>
-  <%= favicon_link_tag %>
-</head>
-<body>
-  <div id="container" class="cf">
-    <header id="header">
-      <nav>
-        <ul>
-          <%- if action_name == 'about'-%>
-            <li class="logo"><%= image_tag("logo.gif", title: "Psychlopedia") -%></li>
-            <!--
-              This awesome piece of work belongs to Matthew DiVito, a.k.a. mr. div. Please, do visit his blog: http://mrdiv.tumblr.com
-            -->
-          <%- end -%>
-          <li><%= link_to 'Experiencias', experiences_path, accesskey: 'e' -%></li>
-          <li><%= link_to 'Al azar', random_url, accesskey: 'r' -%></li>
-          <li><%= link_to 'Agregá una', new_experience_path, accesskey: 'c' -%></li>
-          <li><%= link_to 'Guía de Estilo', style_path, accesskey: 'g', class: 'guides' -%></li>
-          <li><%= link_to '¿Qué es esto?', about_path, class: 'what' %></li>
-          <li class="footnotes"><%= link_to 'Legal', legal_path -%> · <%= link_to 'Privacidad', privacy_path -%></li>
-        </ul>
-      </nav>
-    </header>
-    <div id="main" role="main">
-      <%= yield %>
+  <head>
+    <title>Psychlopedia</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="description" content="Psychlopedia es un archivo digital de experiencias bajo estados alterados de la conciencia.">
+    <meta name="keywords" content="psychedelics psychedelic experience pharmacovigillance harm reduction psicodelica psicodelicos experiencia">
+    <meta name="author" content="5vankmajer">
+    <meta name="viewport" content="device-width, initial-scale=1, user-scalable=no">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://psychlopedia.herokuapp.com">
+    <meta property="og:title" content="Psychlopedia - El archivo digital de experiencias bajo estados alterados de la conciencia.">
+    <meta property="og:image" content="<%= image_url('logo.gif') -%>">
+    <meta property="og:site_name" content="Psychlopedia">
+    <meta property="og:description" content="Psychlopedia es un archivo de experiencias bajo estados alterados de la conciencia en español. Nuestra intención es convertirnos en una herramienta confiable de farmacovigilancia que asista al ejercicio seguro de la psiconáutica.">
+    <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+    <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+    <%= csrf_meta_tags %>
+    <%= favicon_link_tag %>
+  </head>
+  <body>
+    <div id="container" class="cf">
+      <header id="header">
+        <nav>
+          <ul>
+            <%- if action_name == 'about'-%>
+              <li class="logo"><%= image_tag("logo.gif", title: "Psychlopedia") -%></li>
+              <!--
+                This awesome piece of work belongs to Matthew DiVito, a.k.a. mr. div. Please, do visit his blog: http://mrdiv.tumblr.com
+              -->
+            <%- end -%>
+            <li><%= link_to 'Experiencias', experiences_path, accesskey: 'e' -%></li>
+            <li><%= link_to 'Al azar', random_url, accesskey: 'r' -%></li>
+            <li><%= link_to 'Agregá una', new_experience_path, accesskey: 'c' -%></li>
+            <li><%= link_to 'Guía de Estilo', style_path, accesskey: 'g', class: 'guides' -%></li>
+            <li><%= link_to '¿Qué es esto?', about_path, class: 'what' %></li>
+            <li class="footnotes"><%= link_to 'Legal', legal_path -%> · <%= link_to 'Privacidad', privacy_path -%></li>
+          </ul>
+        </nav>
+      </header>
+      <div id="main" role="main">
+        <%= yield %>
+      </div>
     </div>
-  </div> 
     <script>
       UserVoice=window.UserVoice||[];(function(){var uv=document.createElement('script');uv.type='text/javascript';uv.async=true;uv.src='//widget.uservoice.com/b362QGwgVSMnyEbSJprTw.js';var s=document.getElementsByTagName('script')[0];s.parentNode.insertBefore(uv,s)})();
 
@@ -54,14 +54,14 @@
       UserVoice.push(['addTrigger', { mode: 'contact', trigger_position: 'bottom-right' }]);
       UserVoice.push(['autoprompt', {}]);
     </script>
-  <script>
-    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
-    ga('create', 'UA-50157609-1', 'psychlopedia.herokuapp.com');
-    ga('send', 'pageview');
-  </script>
-</body>
+      ga('create', 'UA-50157609-1', 'psychlopedia.herokuapp.com');
+      ga('send', 'pageview');
+    </script>
+  </body>
 </html>
