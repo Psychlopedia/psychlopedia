@@ -62,10 +62,12 @@
           link: link_to(t('experiences.addition.cc_license_type'), 'http://creativecommons.org/licenses/by/4.0/deed', target: '_blank')) -%>
   </div>
 
-  <div class="field">
-    <%= gotcha_error -%>
-    <%= gotcha -%>
-  </div>
+  <%- if action_name == 'new' -%>
+    <div class="field">
+      <%= gotcha_error -%>
+      <%= gotcha -%>
+    </div>
+  <%- end -%>
 
   <div class="field">
     <%= t('experiences.addition.markdown_formatting_html', link: link_to('Markdown', 'https://daringfireball.net/projects/markdown/', target: '_blank')) -%>

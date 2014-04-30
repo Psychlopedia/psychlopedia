@@ -15,8 +15,8 @@ class ExperiencesController < ApplicationController
     if params[:experience][:hearts].present?
       rate_experience(params[:experience][:hearts])
     else
-      if logged_in && @experience.update(experience_params)
-        redirect_to @experience, notice: 'La experiencia se actualizó exitosamente.'
+      if logged_in? && @experience.update(experience_params)
+        redirect_to @experience, notice: t('experiences.show.admin.update_successful')
       else
         render action: 'edit'
       end
@@ -73,6 +73,9 @@ class ExperiencesController < ApplicationController
   end
 
   def has_permission_to_vote
+    # ignore normal updates. this is fucking ugly, man.
+    return true if params[:experience][:hearts].blank?
+
     unless cookies.signed[:votes_left].present?
       cookies.signed[:votes_left] = { value: 5, expires: 24.hours.from_now }
     end
@@ -83,7 +86,7 @@ class ExperiencesController < ApplicationController
       cookies.signed[:votes_left] -= 1
       return true
     else
-      redirect_to experiences_path, notice: 'Ya hemos tomado tus 5 votos diarios.'
+      redirect_to experiences_path, notice: t('experiences.show.rate_limit_reached')
     end
   end
 
@@ -101,7 +104,7 @@ class ExperiencesController < ApplicationController
     end
 
     if @experience.save
-      redirect_to @experience, notice: '¡Gracias, la experiencia ha sido puntuada!'
+      redirect_to @experience, notice: t('experiences.show.rate_successful')
     else
       render action: 'edit'
     end

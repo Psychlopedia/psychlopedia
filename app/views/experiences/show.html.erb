@@ -15,14 +15,14 @@
     <div style="margin-bottom:20px;">
       <%- if @experience.cocktails.present? -%>
         <%- @cocktail = @experience.cocktails.first -%>
-        <p style="font-size:1em;"><span class="emphasis">Sustancia:</span> <%= @cocktail.substance -%></p>
-        <p style="font-size:1em;"><span class="emphasis">Dosis:</span> <%= @cocktail.dosage -%></p>
+        <p style="font-size:1em;"><span class="emphasis"><%= t('experiences.show.substance') -%>:</span> <%= @cocktail.substance -%></p>
+        <p style="font-size:1em;"><span class="emphasis"><%= t('experiences.show.dosage') -%>:</span> <%= @cocktail.dosage -%></p>
       <%- end -%>
       <%- if @experience.set.present? -%>
-        <p style="font-size:1em;"><span class="emphasis">Set:</span> <%= @experience.set -%></p>
+        <p style="font-size:1em;"><span class="emphasis"><%= t('experiences.show.set')%>:</span> <%= @experience.set -%></p>
       <%- end -%>
       <%- if @experience.setting.present? -%>
-        <p style="font-size:1em;"><span class="emphasis">Setting:</span> <%= @experience.setting -%></p>
+        <p style="font-size:1em;"><span class="emphasis"><%= t('experiences.show.setting') -%>:</span> <%= @experience.setting -%></p>
       <%- end -%>
     </div>
     <div class="etxt">
@@ -30,20 +30,23 @@
     </div>
     <%- if @experience.source.present? && @experience.source != 'psychlopedia' -%>
       <div class="source">
-        <p>Fuente: <%= @experience.source -%></p>
+        <p><%= t('experiences.show.source') -%>: <%= @experience.source -%></p>
       </div>
     <%- end -%>
     <% if @experience.is_licensed -%>
       <div class="licensing">
-        <a rel="license" href="http://creativecommons.org/licenses/by/4.0/deed.es" title="Esta obra está bajo una Licencia Creative Commons Atribución 4.0 Internacional" target="_blank"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by/4.0/88x31.png" /></a><br />
+        <a rel="license" href="http://creativecommons.org/licenses/by/4.0/deed.es" target="_blank">
+          <img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by/4.0/88x31.png" />
+        </a>
+        <br>
       </div>
     <%- end -%>
     <hr>
     <div class="ratings">
       <%= form_for @experience do |f| -%>
-        <%= f.label :hearts, 'Calificá esta experiencia (1 al 5): ' -%>
+        <%= f.label :hearts, t('experiences.show.rate_experience') -%>:
         <%= f.number_field :hearts, value: String.new, min: 1, max: 5 -%>
-        <%= f.submit 'Puntuar' -%>
+        <%= f.submit t('experiences.show.submit_rate') -%>
       <%- end -%>
     </div>
     <div id="comments">
@@ -56,8 +59,8 @@
               (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
           })();
       </script>
-      <noscript>Por favor, activá Javascript para poder ver los comentarios.</noscript>
-      <a href="http://disqus.com" class="dsq-brlink">Comentarios provistos por <span class="logo-disqus">Disqus</span></a>
+      <noscript><%= t('experiences.show.no_script') -%></noscript>
+      <a href="http://disqus.com" class="dsq-brlink"><%= t('experiences.show.disqus_placeholder') -%> <span class="logo-disqus">Disqus</span></a>.
     </div>
   </div>
 <%- end -%>
