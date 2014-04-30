@@ -636,3 +636,8 @@ div.disclaimer, div.privacy, div.about, div.styles {
 .etxt a {
   text-decoration: underline;
 }
+
+.i18n {
+  font-size: .8em;
+  margin-bottom: 20px;
+}
