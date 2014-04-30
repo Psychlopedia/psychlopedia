@@ -64,6 +64,8 @@ en:
       rate_limit_reached: Sorry! Your 5 daily votes are already spent.
       admin:
         update_successful: The experience has been successfully updated.
+    random:
+      keep_reading: 'Keep reading...'
   date:
     formats:
       default: ! '%d/%m/%Y'
