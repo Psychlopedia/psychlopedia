@@ -23,6 +23,9 @@
       <header id="header">
         <nav>
           <ul>
+            <li class="i18n">
+              <%= link_to 'English', relocalize_url('en') -%> | <%= link_to 'Español', relocalize_url('es-AR') -%>
+            </li>
             <li><%= link_to t('menu.experiences'), experiences_path, accesskey: 'e' -%></li>
             <li><%= link_to t('menu.random'), random_url, accesskey: 'r' -%></li>
             <li><%= link_to t('menu.add'), new_experience_path, accesskey: 'c' -%></li>
