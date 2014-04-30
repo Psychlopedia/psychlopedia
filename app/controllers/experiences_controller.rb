@@ -7,7 +7,9 @@ class ExperiencesController < ApplicationController
     @experiences = Experience.paginate(page: params[:page])
   end
 
-  def show; end
+  def show
+    @page_title = "Psychlopedia - #{@experience.title}"
+  end
 
   def update
     if params[:experience][:hearts].present?
