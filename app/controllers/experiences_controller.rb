@@ -89,12 +89,8 @@ class ExperiencesController < ApplicationController
     redirect_to experiences_path unless logged_in?
   end
 
-  def sanitize_rating(rating)
-    (1..5).include? rating.to_i
-  end
-
   def rate_experience(rating)
-    rating = sanitize_rating(rating)
+    rating = rating.to_i
 
     if @experience.hearts[rating].blank?
       @experience.hearts[rating] = 1
