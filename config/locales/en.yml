@@ -30,8 +30,8 @@ en:
     privacy: Privacy
   experiences:
     search: Search
-    no_data: Oh, snap. We currently have zero experiences!
-    no_data_invitation: Would you like to start sharing yours?
+    no_data: Oh, snap. We currently have zero experiences.
+    no_data_invitation: Would you like to start by sharing yours?
     addition:
       title: Title
       pseudonym: Pseudonym
