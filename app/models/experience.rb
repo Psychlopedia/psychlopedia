@@ -16,6 +16,8 @@ class Experience < ActiveRecord::Base
 
   default_scope {order('created_at DESC')}
 
+  scope :from_locale, -> { where('locale = ?', I18n.locale.to_s) }
+
   serialize :hearts, Hash
 
   # will_paginate per-page limit
@@ -24,8 +26,8 @@ class Experience < ActiveRecord::Base
   end
 
   def self.random
-    return Experience.none unless Experience.exists?
-    Experience.find Experience.ids.sample
+    return Experience.none unless Experience.from_locale.exists?
+    Experience.find Experience.from_locale.ids.sample
   end
 
   # XXX: a poor's man (and a poor's mind) search engine.

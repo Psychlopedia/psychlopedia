@@ -75,6 +75,7 @@
   </div>
 
   <div class="actions">
+    <%= f.hidden_field :locale, value: I18n.locale -%>
     <%= f.submit t('experiences.addition.submit') -%>
   </div>
 <%- end -%>

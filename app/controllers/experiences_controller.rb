@@ -4,7 +4,7 @@ class ExperiencesController < ApplicationController
   before_action :has_permission_to_vote, only: [:update]
 
   def index
-    @experiences = Experience.paginate(page: params[:page])
+    @experiences = Experience.from_locale.paginate(page: params[:page])
   end
 
   def show
@@ -64,11 +64,12 @@ class ExperiencesController < ApplicationController
   private
 
   def set_experience
-    @experience = Experience.friendly.find(params[:id])
+    @experience = Experience.from_locale.friendly.find(params[:id])
   end
 
   def experience_params
-    permitted = params.require(:experience).permit(:title, :pseudonym, :body, :set, :setting, :is_licensed, cocktails_attributes: [:id, :substance, :dosage])
+    permitted = params.require(:experience).permit(:title, :pseudonym, :body, :set, :setting, :is_licensed, :locale,
+                                                   cocktails_attributes: [:id, :substance, :dosage])
     permitted.delete_if { |key, value| value.blank? }
   end
 
