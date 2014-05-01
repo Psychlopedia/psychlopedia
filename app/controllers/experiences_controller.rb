@@ -8,7 +8,11 @@ class ExperiencesController < ApplicationController
   end
 
   def show
-    @page_title = "Psychlopedia - #{@experience.title}"
+    if @experience.respond_to? :none?
+      redirect_to experiences_path, notice: t('experiences.show.translation_missing')
+    else
+      @page_title = "Psychlopedia - #{@experience.title}"
+    end
   end
 
   def update
@@ -64,7 +68,7 @@ class ExperiencesController < ApplicationController
   private
 
   def set_experience
-    @experience = Experience.from_locale.friendly.find(params[:id])
+    @experience = Experience.from_locale.friendly.find(params[:id]) rescue Experience.none
   end
 
   def experience_params
