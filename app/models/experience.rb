@@ -35,11 +35,11 @@ class Experience < ActiveRecord::Base
     @results = []
     ["%#{query}", "%#{query}%", "#{query}%"].each do |query|
       ["title", "pseudonym"].each do |field|
-        candidates = Experience.where("LOWER(#{field}) LIKE ?", query)
-        @results << candidates unless candidates.empty?
+        candidates = Experience.from_locale.where("LOWER(#{field}) LIKE ?", query)
+        candidates.each { |candidate| @results << candidate } unless candidates.empty?
       end
     end
-    @results.flatten.uniq
+    @results.uniq
   end
 
   def defaults
