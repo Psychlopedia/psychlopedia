@@ -1,0 +1,26 @@
+<div class="about">
+  <p>
+    <span class="self emphasis">Psychlopedia</span> is an
+    <%= link_to 'altered states of consciousness', 'http://en.wikipedia.org/wiki/Altered_state_of_consciousness' -%>
+    experience archive.
+  </p>
+  <p>
+    You can <%= link_to 'create', new_experience_path -%>, <%= link_to 'read', experiences_path -%> and
+    <%= link_to 'search', experiences_path -%> experiences in this repository; if you want to share your experience or search our collection
+    and read about the subjective aspects of a particular substance- or technology-induced experience, Psychlopedia aims to help both purposes.
+  </p>
+  <p>
+    Unlike the well-known, <span style="font-style:italic;">par excellence</span> psychoactive-induced experiences resource
+    <%= link_to 'Erowid Experience Vaults', 'https://www.erowid.org/experiences/', target: '_blank' -%>,
+    Psychlopedia embraces community-driven self-moderation based on simple guidelines and an open rating system.
+    You can <%= link_to 'read more about it here', style_path -%>.
+  </p>
+  <p>
+    This strategic tool of pharmacovigillance and post-black market surveillance is built by psychonauts for everyone
+    wanting to explore the qualitative facets of self-experimentation, an actual and growing real-world practice.
+  </p>
+  <p>
+    We love to talk, and we are happy to receive any kind of constructive feedback;
+    please, <%= mail_to 'airOnGString@gmail.com', "don't hesitate to contact us", subject: "Hello, Psychlopedia!" -%>.
+  </p>
+</div>

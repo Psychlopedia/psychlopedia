@@ -1,88 +1,81 @@
-<%= form_for(@experience) do |f| %>
-  <% if @experience.errors.any? %>
+<%= form_for(@experience) do |f| -%>
+  <%- if @experience.errors.any? -%>
     <div id="error_explanation">
-      <h2><%= pluralize(@experience.errors.count, "error") %> prohibited this experience from being saved:</h2>
+      <h2><%= pluralize(@experience.errors.count, "error") -%> prohibited this experience from being saved:</h2>
 
       <ul>
-      <% @experience.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
+      <%- @experience.errors.full_messages.each do |message| -%>
+        <li><%= message -%></li>
+      <%- end -%>
       </ul>
     </div>
-  <% end %>
+  <%- end -%>
 
   <div class="field">
-    <%= f.label 'Título' %><br>
-    <%= f.text_field :title, required: true %>
+    <%= f.label t('experiences.addition.title') -%><br>
+    <%= f.text_field :title, required: true -%>
   </div>
 
   <div class="field">
-    <%= f.label 'Pseudónimo' %><br>
-    <%= f.text_field :pseudonym, required: true %>
+    <%= f.label t('experiences.addition.pseudonym') -%><br>
+    <%= f.text_field :pseudonym, required: true -%>
   </div>
 
   <div>
-    <span class="enrichment">Clickeá acá si querés agregar más información</span>
+    <span class="enrichment"><%= t('experiences.addition.more_information.legend') -%></span>
   </div>
 
   <div class="extra">
     <div class="field">
       <%= f.fields_for :cocktails do |builder| -%>
-        <%= builder.label :substance, 'Sustancia' -%>
-        <%= builder.text_field :substance, placeholder: 'e.g.: Cannabis' -%>
-        <%= builder.label :dosage, 'Dosis' -%>
-        <%= builder.text_field :dosage, placeholder: 'e.g.: Un cigarrillo' -%>
+        <%= builder.label :substance, t('experiences.addition.more_information.substance') -%>
+        <%= builder.text_field :substance, placeholder: t('experiences.addition.more_information.substance_placeholder') -%>
+        <%= builder.label :dosage, t('experiences.addition.more_information.dosage') -%>
+        <%= builder.text_field :dosage, placeholder: t('experiences.addition.more_information.dosage_placeholder') -%>
       <%- end -%>
     </div>
 
     <div class="set-and-setting">
-      <p>
-        Set &amp; Setting trata sobre el contexto de las experiencias con sustancias psicoactivas.
-      </p>
-      <p>
-        <span class="emphasis">Set</span> es el estado mental que una persona lleva a la experiencia (por ejemplo, pensamientos, 
-        humor y expectativas, entre otros). <span class="emphasis">Setting</span> es el entorno físico, emocional y social que rodea 
-        la experiencia (por ejemplo, el clima, los sentimientos de las personas presentes entre sí y las perspectivas predominantes 
-        sobre lo que es real).
-      </p>
+      <p><%= t('experiences.addition.set_setting_short_description') -%></p>
+      <p><%= t('experiences.addition.set_setting_long_description_html') -%></p>
     </div>
 
     <div class="field">
-      <%= f.label 'Set' %>
-      <%= f.text_field :set %>
+      <%= f.label t('experiences.addition.more_information.set') -%>
+      <%= f.text_field :set -%>
     </div>
 
     <div class="field">
-      <%= f.label 'Setting' %>
-      <%= f.text_field :setting %>
+      <%= f.label t('experiences.addition.more_information.setting') -%>
+      <%= f.text_field :setting -%>
     </div>
   </div>
 
   <div id="experience" class="field">
-    <%= f.label 'Contanos tu experiencia' %><br>
-    <%= f.text_area :body, cols: 40, rows: 20, required: true %>
+    <%= f.label t('experiences.addition.body') -%><br>
+    <%= f.text_area :body, cols: 40, rows: 20, required: true -%>
   </div>
 
   <div class="field license">
     <%= f.check_box :is_licensed -%>
-    Licenciar bajo
-    <span class="emphasis">
-      <%= link_to 'Creative Commons Atribución Internacional 4.0', 'http://creativecommons.org/licenses/by/4.0/deed.es', target: '_blank' -%>
-    </span>
+    <%= t('experiences.addition.license_html',
+          link: link_to(t('experiences.addition.cc_license_type'), 'http://creativecommons.org/licenses/by/4.0/deed', target: '_blank')) -%>
   </div>
 
-  <div class="field">
-    <%= gotcha_error %>
-    <%= gotcha %>
-  </div>
+  <%- if action_name == 'new' -%>
+    <div class="field">
+      <%= gotcha_error -%>
+      <%= gotcha -%>
+    </div>
+  <%- end -%>
 
   <div class="field">
-    Podés usar
-    <span class="emphasis"><%= link_to 'Markdown', 'https://daringfireball.net/projects/markdown/', target: '_blank' -%></span> 
-    para darle formato a tus experiencias.<br><br>
+    <%= t('experiences.addition.markdown_formatting_html', link: link_to('Markdown', 'https://daringfireball.net/projects/markdown/', target: '_blank')) -%>
+    <br><br>
   </div>
 
   <div class="actions">
-    <%= f.submit 'Guardar experiencia' %>
+    <%= f.hidden_field :locale, value: I18n.locale -%>
+    <%= f.submit t('experiences.addition.submit') -%>
   </div>
-<% end %>
+<%- end -%>

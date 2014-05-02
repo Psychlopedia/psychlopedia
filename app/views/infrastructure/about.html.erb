@@ -1,13 +1,26 @@
 <div class="about">
   <p>
-  <span class="self emphasis">Psychlopedia</span> es un archivo de <span class="emphasis">experiencias</span> bajo <%= link_to 'estados alterados de la conciencia', 'https://es.wikipedia.org/wiki/Estado_alterado_de_conciencia', target: '_blank' -%> en español. Podés <%= link_to 'crear', new_experience_path -%>, <%= link_to 'leer', experiences_path -%> y <%= link_to 'buscar', experiences_path -%> experiencias en este repositorio; tanto si querés compartir un relato como si estás buscando información sobre su carácter subjetivo, Psychlopedia está para servir esos propósitos.
+    <span class="self emphasis">Psychlopedia</span> es un archivo de experiencias bajo
+    <%= link_to 'estados alterados de la conciencia', 'http://es.wikipedia.org/wiki/Estados_alterados_de_la_conciencia' -%>.
   </p>
   <p>
-    A diferencia de los clásicos e imponentes <%= link_to 'Erowid Experience Vaults', 'https://www.erowid.org/experiences/', target: '_blank' -%>, Psychlopedia usa un sistema abierto de moderación y valuación de experiencias. Podés <%= link_to 'leer más al respecto por acá', style_path -%>.
+    Podés <%= link_to 'crear', new_experience_path -%>, <%= link_to 'leer', experiences_path -%> y <%= link_to 'buscar', experiences_path -%>
+    experiencias en este repositorio; tanto si querés compartir un relato como buscar en nuestra compilación y leer sobre el carácter subjetivo
+    de una experiencia inducida por sustancias o tecnologías psicoactivas, Psychlopedia apunta a contribuir en ambos casos.
   </p>
   <p>
-    Esta herramienta estratégica de farmacovigilancia está construída por psiconautas para psiconautas.
-    Nos encanta conversar, y cualquier tipo de feedback es felizmente recibido; por favor,
-      <%= mail_to 'airOnGString@gmail.com', 'no dudes en escribirnos', subject: "kestapasando" -%>.
+    A diferencia de los mundialmente reconocidos y respetados
+    <%= link_to 'Erowid Experience Vaults', 'https://www.erowid.org/experiences/', target: '_blank' -%>,
+    Psychlopedia implementa la auto-moderación de sus registros inspirada en reglas simples y un sistema abierto de
+    valoración de experiencias. Podés <%= link_to 'leer más sobre esto aquí', style_path -%>.
+  </p>
+  <p>
+    Esta herramienta estratégica de farmacovigilancia y supervisión post-mercado negro está (siendo) construída por psiconautas
+    para todas las personas interesadas en la exploración de los aspectos cualitativos de la auto-experimentación, una práctica del mundo real,
+    actual y en crecimiento.
+  </p>
+  <p>
+    Nos encanta conversar, y estamos felices de recibir cualquier forma de feedback constructivo; por favor
+    <%= mail_to 'airOnGString@gmail.com', "no dudes de ponerte en contacto con nosotros", subject: "Hola, Psychlopedia!" -%>.
   </p>
 </div>

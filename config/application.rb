@@ -19,6 +19,5 @@ module Psychlopedia
       TOPLEVEL_BINDING.eval('self').extend ::Rails::ConsoleMethods
     end
     config.autoload_paths += %W(#{config.root}/lib)
-    I18n.enforce_available_locales = false
   end
 end

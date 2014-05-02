@@ -4,19 +4,24 @@ class ExperiencesController < ApplicationController
   before_action :has_permission_to_vote, only: [:update]
 
   def index
-    @experiences = Experience.paginate(page: params[:page])
+    @experiences = Experience.from_locale.paginate(page: params[:page])
+    @page_title = "Psychlopedia - #{t('experiences.index_title')}"
   end
 
   def show
-    @page_title = "Psychlopedia - #{@experience.title}"
+    if @experience.respond_to? :none?
+      redirect_to experiences_path, notice: t('experiences.show.translation_missing')
+    else
+      @page_title = "Psychlopedia - #{@experience.title}"
+    end
   end
 
   def update
     if params[:experience][:hearts].present?
       rate_experience(params[:experience][:hearts])
     else
-      if logged_in && @experience.update(experience_params)
-        redirect_to @experience, notice: 'La experiencia se actualizó exitosamente.'
+      if logged_in? && @experience.update(experience_params)
+        redirect_to @experience, notice: t('experiences.show.admin.update_successful')
       else
         render action: 'edit'
       end
@@ -24,6 +29,7 @@ class ExperiencesController < ApplicationController
   end
 
   def random
+    @page_title = "Psychlopedia - #{t('experiences.random_title')}"
     @experience = Experience.random
 
     unless @experience.present?
@@ -32,14 +38,15 @@ class ExperiencesController < ApplicationController
   end
 
   def new
+    @page_title = "Psychlopedia - #{t('experiences.new_title')}"
     @experience = Experience.new
     @experience.cocktails.build
   end
 
   def create
-    if gotcha_valid?
-      @experience = Experience.create(experience_params)
-      redirect_to experience_path(@experience)
+    @experience = Experience.new(experience_params)
+    if gotcha_valid? && @experience.save
+      redirect_to experience_path @experience
     else
       render :new
     end
@@ -48,6 +55,7 @@ class ExperiencesController < ApplicationController
   def search
     @query = params[:query].downcase.parameterize
     @results = Experience.search(@query)
+    @page_title = "Psychlopedia - #{t('experiences.search_title', query: @query)}"
   end
 
   # administrative actions
@@ -64,15 +72,19 @@ class ExperiencesController < ApplicationController
   private
 
   def set_experience
-    @experience = Experience.friendly.find(params[:id])
+    @experience = Experience.from_locale.friendly.find(params[:id]) rescue Experience.none
   end
 
   def experience_params
-    permitted = params.require(:experience).permit(:title, :pseudonym, :body, :set, :setting, :is_licensed, cocktails_attributes: [:id, :substance, :dosage])
+    permitted = params.require(:experience).permit(:title, :pseudonym, :body, :set, :setting, :is_licensed, :locale,
+                                                   cocktails_attributes: [:id, :substance, :dosage])
     permitted.delete_if { |key, value| value.blank? }
   end
 
   def has_permission_to_vote
+    # ignore normal updates. this is fucking ugly, man.
+    return true if params[:experience][:hearts].blank?
+
     unless cookies.signed[:votes_left].present?
       cookies.signed[:votes_left] = { value: 5, expires: 24.hours.from_now }
     end
@@ -83,7 +95,7 @@ class ExperiencesController < ApplicationController
       cookies.signed[:votes_left] -= 1
       return true
     else
-      redirect_to experiences_path, notice: 'Ya hemos tomado tus 5 votos diarios.'
+      redirect_to experiences_path, notice: t('experiences.show.rate_limit_reached')
     end
   end
 
@@ -101,7 +113,7 @@ class ExperiencesController < ApplicationController
     end
 
     if @experience.save
-      redirect_to @experience, notice: '¡Gracias, la experiencia ha sido puntuada!'
+      redirect_to @experience, notice: t('experiences.show.rate_successful')
     else
       render action: 'edit'
     end

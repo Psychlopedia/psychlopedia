@@ -20,4 +20,70 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  psychlopedia:
+    titles:
+      about_title: What is this?
+      style_title: Style guide
+      legal_title: Legal
+      privacy_title: Privacy
+  menu:
+    experiences: Experiences
+    random: Random
+    add: Add
+    style_guide: Style Guide
+    what_is_this: What is this?
+    legal: Legal
+    privacy: Privacy
+  experiences:
+    index_title: Archive
+    random_title: Random
+    new_title: New
+    search_title: 'Results for: %{query}'
+    search: Search
+    no_data: Oh, snap. We currently have zero experiences.
+    no_data_invitation: Would you like to start by sharing yours?
+    addition:
+      title: Title
+      pseudonym: Pseudonym
+      body: Tell us your experience
+      more_information:
+        legend: Click here if you want to add more information
+        substance: Substance
+        substance_placeholder: e.g. Cannabis
+        dosage: Dosage
+        dosage_placeholder: e.g. 1g
+        set: Set
+        setting: Setting
+      submit: Save experience
+      markdown_formatting_html: 'You can use <span class="emphasis">%{link}</span> to format your experiences.'
+      license_html: 'License under <span class="emphasis">%{link}</span>'
+      cc_license_type: 'Creative Commons International Attribution 4.0'
+      set_setting_short_description: Set & Setting refers to the internal and external contexts of the experience.
+      set_setting_long_description_html: "<span class='emphasis'>Set</span> is the state of mind an individual carries to the experience (i.e. thoughts, mood and expectations, among many other things). <span class='emphasis'>Setting</span> is the physical, social and emotional environment that surrounds the experience (i.e te weather, people's feelings about one another and dominant perspectives about what is real)."
+    show:
+      translation_missing: Sorry. We don't have a translation yet for the experience that you tried to read.
+      substance: Substance
+      dosage: Dosage
+      set: Set
+      setting: Setting
+      source: Source
+      rate_experience: Rate this experience (1 to 5)
+      submit_rate: Rate
+      no_script: Please, activate Javascript to be able to use our comments section.
+      disqus_placeholder: Comments provided by
+      rate_successful: Thanks! The experience has been rated.
+      rate_limit_reached: Sorry! Your 5 daily votes are already spent.
+      admin:
+        update_successful: The experience has been successfully updated.
+    random:
+      keep_reading: Keep reading...
+    search_form:
+      submit: Search
+      results_html: 'Results for: <span style="font-style:italic;">%{query}</span>'
+      no_results_html: "Ouch. We didn't find anything related to: <span style='font-style:italic;'>%{query}</span>."
+      contribute_instead: Would you like to share a similar experience?
+  date:
+    formats:
+      default: ! '%d/%m/%Y'
+      long: ! '%A, %B %-d of %Y'
+      short: ! '%d %b %Y'

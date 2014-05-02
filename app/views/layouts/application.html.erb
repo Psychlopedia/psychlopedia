@@ -4,9 +4,9 @@
     <title><%= page_title -%></title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <meta name="description" content="Psychlopedia es un archivo digital de experiencias bajo estados alterados de la conciencia.">
-    <meta name="keywords" content="psychedelics psychedelic experience pharmacovigillance harm reduction psicodelica psicodelicos experiencia">
+    <meta name="keywords" content="psychedelics psychedelic experience pharmacovigillance harm reduction reduccion daños psicodelica psicodelicos experiencia">
     <meta name="author" content="5vankmajer">
-    <meta name="viewport" content="device-width, initial-scale=1, user-scalable=no">
+    <meta name="viewport" content="device-width, initial-scale=.5, user-scalable=no">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://psychlopedia.herokuapp.com">
     <meta property="og:title" content="Psychlopedia - El archivo digital de experiencias bajo estados alterados de la conciencia.">
@@ -23,11 +23,14 @@
       <header id="header">
         <nav>
           <ul>
-            <li><%= link_to 'Experiencias', experiences_path, accesskey: 'e' -%></li>
-            <li><%= link_to 'Al azar', random_url, accesskey: 'r' -%></li>
-            <li><%= link_to 'Agregá una', new_experience_path, accesskey: 'c' -%></li>
-            <li><%= link_to '¿Qué es esto?', about_path, class: 'what' %></li>
-            <li class="footnotes"><%= link_to 'Legal', legal_path -%> · <%= link_to 'Privacidad', privacy_path -%></li>
+            <li class="i18n">
+              <%= link_to 'English', relocalize_url('en') -%> | <%= link_to 'Español', relocalize_url('es-AR') -%>
+            </li>
+            <li><%= link_to t('menu.experiences'), experiences_path, accesskey: 'e' -%></li>
+            <li><%= link_to t('menu.random'), random_url, accesskey: 'r' -%></li>
+            <li><%= link_to t('menu.add'), new_experience_path, accesskey: 'c' -%></li>
+            <li><%= link_to t('menu.what_is_this'), about_path, class: 'what' %></li>
+            <li class="footnotes"><%= link_to t('menu.legal'), legal_path -%> · <%= link_to t('menu.privacy'), privacy_path -%></li>
           </ul>
         </nav>
       </header>

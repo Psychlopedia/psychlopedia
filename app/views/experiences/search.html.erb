@@ -1,23 +1,24 @@
 <div class="search">
   <%= form_tag(search_path, method: :get) do -%>
     <%= text_field_tag(:query) -%>
-    <%= submit_tag("Buscar")%>
+    <%= hidden_field_tag(:locale, I18n.locale) -%>
+    <%= submit_tag t('experiences.search') -%>
   <%- end -%>
 </div>
 <%- unless @results.empty? -%>
   <%- if @query.present? -%>
-    <p class="results-title">Resultados para: <em><%= @query -%></em></p>
+    <p class="results-title"><%= t('experiences.search_form.results_html', query: @query) -%></p>
   <%- end -%>
   <% @results.each do |experience| -%>
     <li class="experience">
       <%= l(experience.created_at.to_date, format: :short).upcase -%>
-      <%= link_to (truncate(experience.title, length: 45, omission: '...')), experience_path(experience) -%> por
+      <%= link_to (truncate(experience.title, length: 45, omission: '...')), experience_path(experience) -%> ~
       <%= experience.pseudonym -%>
       </li>
   <%- end -%>
 <%- else -%>
   <div class="no-results">
-    <p>Ouch. No encontramos lo que estás buscando.</p>
-    <p><%= link_to '¿Querés contarnos una experiencia similar, quizá?', new_experience_path, class: 'create' -%></p>
+    <p><%= t('experiences.search_form.no_results_html', query: @query) -%></p>
+    <p><%= link_to t('experiences.search_form.contribute_instead'), new_experience_path, class: 'create' -%></p>
   </div>
 <%- end -%>
