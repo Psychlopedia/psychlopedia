@@ -41,9 +41,9 @@ class ExperiencesController < ApplicationController
   end
 
   def create
-    if gotcha_valid?
-      @experience = Experience.create(experience_params)
-      redirect_to experience_path(@experience)
+    @experience = Experience.new(experience_params)
+    if gotcha_valid? && @experience.save
+      redirect_to experience_path @experience
     else
       render :new
     end
