@@ -1,1 +1,15 @@
-Holy smokes, Batwoman.
+<div class="about">
+  <p>
+    <span class="self emphasis">Psychlopedia</span> is an
+    <%= link_to 'altered states of consciousness', 'http://en.wikipedia.org/wiki/Altered_state_of_consciousness' -%> <span class="emphasis">experience
+    archive</span>. You can <%= link_to 'create', new_experience_path -%>, <%= link_to 'read', experiences_path -%> and <%= link_to 'search', experiences_path -%> experiences in this repository; if you want to share your experience or search and read about its subjective aspects, Psychlopedia will help both purposes.
+  </p>
+  <p>
+    A diferencia de los clásicos e imponentes <%= link_to 'Erowid Experience Vaults', 'https://www.erowid.org/experiences/', target: '_blank' -%>, Psychlopedia usa un sistema abierto de moderación y valuación de experiencias. Podés <%= link_to 'leer más al respecto por acá', style_path -%>.
+  </p>
+  <p>
+    Esta herramienta estratégica de farmacovigilancia está construída por psiconautas para psiconautas.
+    Nos encanta conversar, y cualquier tipo de feedback es felizmente recibido; por favor,
+      <%= mail_to 'airOnGString@gmail.com', 'no dudes en escribirnos', subject: "kestapasando" -%>.
+  </p>
+</div>
