@@ -5,6 +5,7 @@ class ExperiencesController < ApplicationController
 
   def index
     @experiences = Experience.from_locale.paginate(page: params[:page])
+    @page_title = "Psychlopedia - #{t('experiences.index_title')}"
   end
 
   def show
@@ -28,6 +29,7 @@ class ExperiencesController < ApplicationController
   end
 
   def random
+    @page_title = "Psychlopedia - #{t('experiences.random_title')}"
     @experience = Experience.random
 
     unless @experience.present?
@@ -36,6 +38,7 @@ class ExperiencesController < ApplicationController
   end
 
   def new
+    @page_title = "Psychlopedia - #{t('experiences.new_title')}"
     @experience = Experience.new
     @experience.cocktails.build
   end
@@ -52,6 +55,7 @@ class ExperiencesController < ApplicationController
   def search
     @query = params[:query].downcase.parameterize
     @results = Experience.search(@query)
+    @page_title = "Psychlopedia - #{t('experiences.search_title', query: @query)}"
   end
 
   # administrative actions

@@ -20,6 +20,12 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
+  psychlopedia:
+    titles:
+      about_title: What is this?
+      style_title: Style guide
+      legal_title: Legal
+      privacy_title: Privacy
   menu:
     experiences: Experiences
     random: Random
@@ -29,6 +35,10 @@ en:
     legal: Legal
     privacy: Privacy
   experiences:
+    index_title: Archive
+    random_title: Random
+    new_title: New
+    search_title: 'Results for: %{query}'
     search: Search
     no_data: Oh, snap. We currently have zero experiences.
     no_data_invitation: Would you like to start by sharing yours?

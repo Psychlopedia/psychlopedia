@@ -1,4 +1,10 @@
 es-AR:
+  psychlopedia:
+    titles:
+      about_title: ¿Qué es esto?
+      style_title: Estilo
+      legal_title: Legal
+      privacy_title: Privacidad
   menu:
     experiences: Experiencias
     random: Al azar
@@ -8,6 +14,10 @@ es-AR:
     legal: Legal
     privacy: Privacidad
   experiences:
+    index_title: Archivo
+    random_title: Aleatorio
+    new_title: Nueva
+    search_title: 'Resultados para: %{query}'
     search: Buscar
     no_data: Uh, qué macana. Aún no tenemos experiencias.
     no_data_invitation: ¿Querés empezar por la tuya?
