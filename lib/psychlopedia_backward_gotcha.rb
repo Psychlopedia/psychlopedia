@@ -1,7 +1,7 @@
 # encoding: utf-8
 
 # taken from https://github.com/seejohnrun/gotcha/blob/master/gotchas/backward_gotcha.rb
-class SpanishBackwardGotcha < Gotcha::Base
+class PsychlopediaBackwardGotcha < Gotcha::Base
   MIN_STRING_LENGTH = 4
   MAX_STRING_LENGTH = 6
 

@@ -1,2 +1,2 @@
 Gotcha.unregister_all_types
-Gotcha.register_type BackwardGotcha
+Gotcha.register_type PsychlopediaBackwardGotcha
