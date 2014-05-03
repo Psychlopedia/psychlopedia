@@ -1,17 +1,18 @@
 class InfrastructureController < ApplicationController
-  def about
-    @page_title = "Psychlopedia - #{t('psychlopedia.titles.about_title')}"
-  end
+  before_action :set_title
 
-  def style
-    @page_title = "Psychlopedia - #{t('psychlopedia.titles.style_title')}"
-  end
+  def about; end
 
-  def legal
-    @page_title = "Psychlopedia - #{t('psychlopedia.titles.legal_title')}"
-  end
+  def style; end
 
-  def privacy
-    @page_title = "Psychlopedia - #{t('psychlopedia.titles.privacy_title')}"
+  def legal; end
+
+  def privacy; end
+
+  private
+
+  def set_title
+    translated_title = t("psychlopedia.titles.#{action_name}_title")
+    @page_title = "Psychlopedia - #{translated_title}"
   end
 end
