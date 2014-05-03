@@ -26,6 +26,8 @@ en:
       style_title: Style guide
       legal_title: Legal
       privacy_title: Privacy
+    gotcha:
+      question: "What is '%{gotcha}' backwards?"
   menu:
     experiences: Experiences
     random: Random

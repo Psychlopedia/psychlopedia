@@ -5,6 +5,8 @@ es-AR:
       style_title: Estilo
       legal_title: Legal
       privacy_title: Privacidad
+    gotcha:
+      question: "¿Qué es '%{gotcha}' al revés?"
   menu:
     experiences: Experiencias
     random: Al azar

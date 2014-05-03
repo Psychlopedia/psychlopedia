@@ -11,7 +11,7 @@ class SpanishBackwardGotcha < Gotcha::Base
     string_length = rand(MAX_STRING_LENGTH - MIN_STRING_LENGTH) + MIN_STRING_LENGTH
     string = (0...string_length).collect { CHARS[Kernel.rand(CHARS.length)] }.join
 
-    @question = "¿Qué es '#{string}' al revés?"
+    @question = I18n.t('psychlopedia.gotcha.question', gotcha: string)
     @answer = string.reverse
   end
 end

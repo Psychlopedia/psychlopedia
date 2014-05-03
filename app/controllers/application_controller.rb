@@ -7,16 +7,6 @@ class ApplicationController < ActionController::Base
 
   def set_locale
     I18n.locale = params[:locale] || I18n.default_locale
-    set_correct_gotcha_implementation
-  end
-
-  def set_correct_gotcha_implementation
-    Gotcha.unregister_all_types
-    if I18n.locale == :en
-      Gotcha.register_type BackwardGotcha
-    else
-      Gotcha.register_type SpanishBackwardGotcha
-    end
   end
 
   def default_url_options(options = {})
