@@ -1,5 +1,4 @@
 Psychlopedia::Application.routes.draw do
-  # experiences
   scope(path_names: {new: 'nueva'}) do
     resources :experiences, path: 'experiencias'
   end
