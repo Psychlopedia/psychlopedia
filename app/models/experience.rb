@@ -3,6 +3,8 @@
 class Experience < ActiveRecord::Base
   extend FriendlyId
 
+  N_STAR_RATING = 5
+
   has_many :cocktails, dependent: :destroy
   accepts_nested_attributes_for :cocktails, reject_if: lambda { |cocktail| cocktail[:substance].blank? && cocktail[:dosage].blank? }
 
@@ -66,16 +68,25 @@ class Experience < ActiveRecord::Base
 
   def human_readable_rating
     if self.hearts.empty?
-      five_white_stars = ('&#9734;' * 5)
-      five_white_stars.html_safe
+      ('&#9734;' * N_STAR_RATING).html_safe
     else
-      black_stars = self.hearts.max_by { |stars, quantity| quantity }.first.to_i
-
-      n_of_black_stars = ('&#9733;' * black_stars)
-      n_of_white_stars = ('&#9734;' * (5 - black_stars))
-
-      star_rating = n_of_black_stars + n_of_white_stars
-      star_rating.html_safe
+      (black_stars + white_stars).html_safe
     end
+  end
+
+  def calculate_black_stars
+    numeric_rating.round
+  end
+
+  def black_stars
+    ('&#9733;' * calculate_black_stars)
+  end
+
+  def calculate_white_stars
+    (N_STAR_RATING - calculate_black_stars)
+  end
+
+  def white_stars
+    ('&#9734;' * calculate_white_stars)
   end
 end
