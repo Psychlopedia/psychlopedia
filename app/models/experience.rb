@@ -55,7 +55,6 @@ class Experience < ActiveRecord::Base
     weight_dot_n_reviews = self.hearts.inject([]) do |weights, (rating, amount)|
       total_n_of_reviews << amount
       weights << (rating * amount).to_f
-      weights
     end
 
     if total_n_of_reviews.sum.zero?
