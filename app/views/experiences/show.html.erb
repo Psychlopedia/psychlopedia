@@ -45,7 +45,7 @@
     <div class="ratings">
       <%= form_for @experience do |f| -%>
         <%= f.label :hearts, t('experiences.show.rate_experience') -%>:
-        <%= f.number_field :hearts, value: String.new, min: 1, max: 5 -%>
+        <%= f.number_field :hearts, value: String.new, min: 1, max: 5, required: true -%>
         <%= f.submit t('experiences.show.submit_rate') -%>
       <%- end -%>
     </div>
