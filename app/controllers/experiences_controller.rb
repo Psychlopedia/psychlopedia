@@ -2,17 +2,17 @@ class ExperiencesController < ApplicationController
   before_action :set_experience, only: [:show, :update, :edit, :destroy]
   before_action :check_admin, only: [:edit, :destroy]
   before_action :has_permission_to_vote, only: [:update]
+  before_action :set_title, only: [:index, :random, :new, :search]
 
   def index
     @experiences = Experience.from_locale.paginate(page: params[:page])
-    @page_title = "Psychlopedia - #{t('experiences.index_title')}"
   end
 
   def show
     if @experience.respond_to? :none?
       redirect_to experiences_path, notice: t('experiences.show.translation_missing')
     else
-      @page_title = "Psychlopedia - #{@experience.title}"
+      set_title
     end
   end
 
@@ -29,16 +29,11 @@ class ExperiencesController < ApplicationController
   end
 
   def random
-    @page_title = "Psychlopedia - #{t('experiences.random_title')}"
     @experience = Experience.random
-
-    unless @experience.present?
-      redirect_to experiences_url
-    end
+    redirect_to experiences_url unless @experience.present?
   end
 
   def new
-    @page_title = "Psychlopedia - #{t('experiences.new_title')}"
     @experience = Experience.new
     @experience.cocktails.build
   end
@@ -73,6 +68,15 @@ class ExperiencesController < ApplicationController
 
   def set_experience
     @experience = Experience.from_locale.friendly.find(params[:id]) rescue Experience.none
+  end
+
+  def set_title
+    if params[:query]
+      translated_title_for_action = t("experiences.#{action_name}_title", query: extract_and_sanitize_query)
+    else
+      translated_title_for_action = t("experiences.#{action_name}_title")
+    end
+    @page_title = "Psychlopedia - #{translated_title_for_action}"
   end
 
   def experience_params
