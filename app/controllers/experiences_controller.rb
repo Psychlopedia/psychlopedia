@@ -48,9 +48,8 @@ class ExperiencesController < ApplicationController
   end
 
   def search
-    @query = params[:query].downcase.parameterize
+    @query = extract_and_sanitize_query
     @results = Experience.search(@query)
-    @page_title = "Psychlopedia - #{t('experiences.search_title', query: @query)}"
   end
 
   # administrative actions
@@ -77,6 +76,10 @@ class ExperiencesController < ApplicationController
       translated_title_for_action = t("experiences.#{action_name}_title")
     end
     @page_title = "Psychlopedia - #{translated_title_for_action}"
+  end
+
+  def extract_and_sanitize_query
+    params[:query].downcase.parameterize
   end
 
   def experience_params
