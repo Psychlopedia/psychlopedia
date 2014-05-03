@@ -2,11 +2,8 @@ class InfrastructureController < ApplicationController
   before_action :set_title
 
   def about; end
-
   def style; end
-
   def legal; end
-
   def privacy; end
 
   private
