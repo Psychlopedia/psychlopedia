@@ -7,7 +7,7 @@
       <p style="margin-bottom:5px;"><%= link_to '~Editar', edit_experience_path(@experience) -%></p>
     <%- end -%>
     <div class="thingo">
-      <h1 class="title"><%= titleize(@experience.title) -%></h1>
+      <h1 class="title" title="<%= titleize(@experience.title) -%>"><%= truncate(titleize(@experience.title), length: 35) -%></h1>
       <h2><%= @experience.human_readable_rating -%></h2>
       <h2 style="font-size:1.2em;padding-top:4px;">(<%= @experience.numeric_rating -%>)</h2>
     </div>
