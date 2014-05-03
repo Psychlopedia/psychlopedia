@@ -63,6 +63,8 @@ class ExperiencesController < ApplicationController
     redirect_to admin_path
   end
 
+  # end of administrative actions
+
   private
 
   def set_experience
