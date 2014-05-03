@@ -40,7 +40,7 @@ es-AR:
       set_setting_short_description: Set & Setting trata sobre el contexto de las experiencias con sustancias psicoactivas.
       set_setting_long_description_html: '<span class="emphasis">Set</span> es el estado mental que una persona lleva a la experiencia (por ejemplo, pensamientos, humor y expectativas, entre otros). <span class="emphasis">Setting</span> es el entorno físico, emocional y social que rodea la experiencia (por ejemplo, el clima, los sentimientos de las personas presentes entre sí y las perspectivas predominantes acerca de lo que es real).'
     show:
-      translation_missing: Disculpas. Todavía no tenemos una traducción para la experiencia que intentaste leer.
+      available_experiences: Acá hay una lista con las experiencias disponibles en este idioma.
       substance: Sustancia
       dosage: Dosis
       set: Set

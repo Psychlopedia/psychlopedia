@@ -10,7 +10,7 @@ class ExperiencesController < ApplicationController
 
   def show
     if @experience.respond_to? :none?
-      redirect_to experiences_path, notice: t('experiences.show.translation_missing')
+      redirect_to experiences_path, notice: t('experiences.show.available_experiences')
     else
       set_title
     end
