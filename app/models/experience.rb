@@ -5,6 +5,9 @@ class Experience < ActiveRecord::Base
 
   N_STAR_RATING = 5
 
+  has_many :experience_categories
+  has_many :categories, through: :experience_categories
+
   has_many :cocktails, dependent: :destroy
   accepts_nested_attributes_for :cocktails, reject_if: lambda { |cocktail| cocktail[:substance].blank? && cocktail[:dosage].blank? }
 
