@@ -83,7 +83,7 @@ en:
       keep_reading: Keep reading...
     search_form:
       submit: Search
-      results_html: 'Results for: <span style="font-style:italic;">%{query}</span>'
+      results_html: 'Search results for: <span style="font-style:italic;">%{query}</span>'
       no_results_html: "Ouch. We didn't find anything related to: <span style='font-style:italic;'>%{query}</span>."
       contribute_instead: Would you like to share a similar experience?
   date:

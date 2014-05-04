@@ -5,20 +5,5 @@
     <%= submit_tag t('experiences.search') -%>
   <%- end -%>
 </div>
-<%- unless @results.empty? -%>
-  <%- if @query.present? -%>
-    <p class="results-title"><%= t('experiences.search_form.results_html', query: @query) -%></p>
-  <%- end -%>
-  <% @results.each do |experience| -%>
-    <li class="experience">
-      <%= l(experience.created_at.to_date, format: :short).upcase -%>
-      <%= link_to (truncate(titleize(experience.title), length: 45, omission: '...')), experience_path(experience), title: titleize(experience.title) -%> ~
-      <%= experience.pseudonym -%>
-      </li>
-  <%- end -%>
-<%- else -%>
-  <div class="no-results">
-    <p><%= t('experiences.search_form.no_results_html', query: @query) -%></p>
-    <p><%= link_to t('experiences.search_form.contribute_instead'), new_experience_path, class: 'create' -%></p>
-  </div>
-<%- end -%>
+
+<%= render 'search_results' %>

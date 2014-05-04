@@ -1,0 +1,20 @@
+<%- unless @results.empty? -%>
+  <p class="results-title"><%= t('experiences.search_form.results_html', query: @query) -%></p>
+  <% @results.each do |experience| -%>
+    <li class="experience search-result">
+      <%= l(experience.created_at.to_date) -%>
+      <%= link_to (truncate(titleize(experience.title), length: 45, omission: '...')), experience_path(experience), title: titleize(experience.title) -%>
+      <%= t('psychlopedia.misc.by') -%>
+      <%= experience.pseudonym -%>
+      <div class="snippet">
+        <%= truncate(experience.body, length: 250, omission: '...') -%>
+        <%= link_to t('experiences.random.keep_reading'), experience_path(experience) -%>
+      </div>
+    </li>
+  <%- end -%>
+<%- else -%>
+  <div class="no-results">
+    <p><%= t('experiences.search_form.no_results_html', query: @query) -%></p>
+    <p><%= link_to t('experiences.search_form.contribute_instead'), new_experience_path, class: 'create' -%></p>
+  </div>
+<%- end -%>

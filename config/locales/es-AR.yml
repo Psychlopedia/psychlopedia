@@ -62,7 +62,7 @@ es-AR:
       keep_reading: Seguí leyendo...
     search_form:
       submit: Buscá
-      results_html: 'Resultados para: <span style="font-style:italic;">%{query}</span>'
+      results_html: 'Resultados de la búsqueda para: <span style="font-style:italic;">%{query}</span>'
       no_results_html: "Ouch. No encontramos nada relacionado a: <span style='font-style:italic;'>%{query}</span>."
       contribute_instead: ¿Te gustaría compartir una experiencia similar?
   # and everything else...
