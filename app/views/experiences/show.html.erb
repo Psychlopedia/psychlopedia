@@ -8,11 +8,15 @@
     <%- end -%>
     <div class="thingo">
       <h1 class="title" title="<%= titleize(@experience.title) -%>">
-        <span class="self"><%= truncate(titleize(@experience.title), length: 35) -%></span>
+        <span class="self"><%= truncate_and_titleize(@experience.title) -%></span>
       </h1>
       <h2 title="<%= @experience.numeric_rating -%>"><%= @experience.human_readable_rating -%></h2>
     </div>
-    <h3 class="whoandwhen"><%= @experience.pseudonym -%> &#8669; <%= l @experience.created_at.to_date, format: :long -%></h3>
+    <h3 class="whoandwhen">
+      <%= t('psychlopedia.misc.by') -%>
+      <%= @experience.pseudonym -%> &#8669;
+      <%= l @experience.created_at.to_date, format: :long -%>
+    </h3>
     <div style="margin-bottom:20px;">
       <%- if @experience.cocktails.present? -%>
         <%- @cocktail = @experience.cocktails.first -%>

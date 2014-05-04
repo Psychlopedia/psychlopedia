@@ -7,4 +7,8 @@ module ExperiencesHelper
   def titleize(title)
     title.split.map(&:capitalize).join(' ')
   end
+
+  def truncate_and_titleize(title, length = 40, omission = '...')
+    truncate(titleize(title), length: length, omission: omission)
+  end
 end

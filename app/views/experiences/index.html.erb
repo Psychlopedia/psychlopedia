@@ -12,7 +12,7 @@
   <% @experiences.each do |experience| -%>
     <li class="experience">
       <%= l(experience.created_at.to_date, format: :short).upcase -%>
-      <%= link_to (truncate(titleize(experience.title), length: 40, omission: '...')), experience_path(experience), title: titleize(experience.title) -%>
+      <%= link_to truncate_and_titleize(experience.title), experience_path(experience), title: titleize(experience.title) -%>
       <%= t('psychlopedia.misc.by') -%>
       <%= experience.pseudonym -%>
     </li>
