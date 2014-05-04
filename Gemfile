@@ -13,8 +13,7 @@ gem 'jquery-rails'
 gem 'jquery-turbolinks'
 gem 'turbolinks'
 gem 'jbuilder', '~> 1.2'
-
-gem 'thread_safe', github: 'headius/thread_safe'
+gem 'thread_safe'
 
 gem 'pry'
 gem 'pry-nav'
