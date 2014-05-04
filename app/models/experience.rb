@@ -93,6 +93,6 @@ class Experience < ActiveRecord::Base
   end
 
   def categories_names
-    self.categories.collect(&:name)
+    self.categories.map(&:name).map(&:downcase)
   end
 end

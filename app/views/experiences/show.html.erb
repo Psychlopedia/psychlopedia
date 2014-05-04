@@ -16,6 +16,11 @@
       <%= t('psychlopedia.misc.by') -%>
       <%= @experience.pseudonym -%> &#8669;
       <%= l @experience.created_at.to_date, format: :long -%>
+      <%- if @experience.categories.present? -%>
+        <%- @experience.categories_names.each do |name| -%>
+          <span class="category"><%= name %></span>
+        <%- end -%>
+      <%- end -%>
     </h3>
     <div style="margin-bottom:20px;">
       <%- if @experience.cocktails.present? -%>
