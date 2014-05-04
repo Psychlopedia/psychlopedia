@@ -4,7 +4,7 @@
       <h1 class="title" title="<%= titleize(@experience.title)-%>">
         <%= truncate(titleize(@experience.title), length: 35) -%>
       </h1>
-      <h2>
+      <h2 title="<%= @experience.numeric_rating -%>">
         <%= @experience.human_readable_rating -%>
       </h2>
     </div>
