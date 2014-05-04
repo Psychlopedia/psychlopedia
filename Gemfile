@@ -19,6 +19,7 @@ gem 'pry'
 gem 'pry-nav'
 
 group :development, :test do
+  gem 'capybara'
   gem 'rspec-rails'
   gem 'thin'
 end
