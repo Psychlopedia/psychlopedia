@@ -86,6 +86,8 @@ h1 {
 }
 
 h1:hover {
+  -webkit-animation: hover-change linear 4s infinite;
+     -moz-animation: hover-change linear 4s infinite;
   color: #30EF8E;
 }
 
