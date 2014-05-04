@@ -21,6 +21,8 @@
 
 en:
   psychlopedia:
+    misc:
+      by: by
     titles:
       about_title: What is this?
       style_title: Style guide

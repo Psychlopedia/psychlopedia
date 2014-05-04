@@ -1,5 +1,7 @@
 es-AR:
   psychlopedia:
+    misc:
+      by: por
     titles:
       about_title: ¿Qué es esto?
       style_title: Estilo

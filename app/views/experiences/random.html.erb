@@ -8,7 +8,7 @@
         <%= @experience.human_readable_rating -%>
       </h2>
     </div>
-    <h3 class="whoandwhen"><%= @experience.pseudonym -%> &#8669; <%= l @experience.created_at.to_date, format: :long %></h3>
+    <h3 class="whoandwhen"><%= t('psychlopedia.misc.by') -%> <%= @experience.pseudonym -%></h3>
     <div class="etxt">
       <%= markdown(truncate(@experience.body, length: 850, omission: ' [...]')) -%>
       <span class="keep_reading"><%= link_to t('experiences.random.keep_reading'), experience_path(@experience) -%></span>
