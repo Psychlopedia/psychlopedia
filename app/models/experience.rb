@@ -91,4 +91,8 @@ class Experience < ActiveRecord::Base
   def white_stars
     ('&#9734;' * calculate_white_stars)
   end
+
+  def categories_names
+    self.categories.collect(&:name)
+  end
 end
