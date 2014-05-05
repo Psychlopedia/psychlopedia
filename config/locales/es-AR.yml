@@ -21,6 +21,7 @@ es-AR:
     index_title: Archivo
     random_title: Aleatorio
     new_title: Nueva
+    show_title: '%{experience_title}'
     search_title: 'Resultados para: %{query}'
     search: Buscar
     no_data: Uh, qué macana. Aún no tenemos experiencias.

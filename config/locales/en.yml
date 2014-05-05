@@ -42,6 +42,7 @@ en:
     index_title: Archive
     random_title: Random
     new_title: New
+    show_title: '%{experience_title}'
     search_title: 'Results for: %{query}'
     search: Search
     no_data: Oh, snap. We currently have zero experiences.
