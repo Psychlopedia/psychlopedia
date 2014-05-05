@@ -11,4 +11,10 @@ module ExperiencesHelper
   def truncate_and_titleize(title, length = 40, omission = '...')
     truncate(titleize(title), length: length, omission: omission)
   end
+
+  def disqus_thread_url(experience)
+    naked_url = experience_path(experience).split('?').first
+    disqus_thread_url = "#{naked_url}#disqus_thread"
+    disqus_thread_url
+  end
 end
