@@ -409,6 +409,7 @@ div.ratings input[type="submit"] {
 
 p.notice {
   border: 1px solid #05964C;
+  border-radius: 3px;
   padding: 4px 3px 4px 3px;
   text-align: center;
   margin-bottom: 10px;
