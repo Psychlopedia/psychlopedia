@@ -9,10 +9,12 @@
       <%= submit_tag t('experiences.search') -%>
     <%- end -%>
   </div>
-  <div class="categories">
+  <div class="categories" style="margin-bottom:10px;">
     <ul>
-      <%- Category.all.map(&:name).each do |category_name| -%>
-        <li><%= category_name %></li>
+      <%- Category.all.each do |category| -%>
+        <li style="display:inline;font-weight:bold;border:1px solid black;padding:2px;margin-right:10px;">
+          <%= link_to category.name, category_path(category) -%>
+        </li>
       <%- end -%>
     </ul>
   </div>

@@ -19,7 +19,7 @@ class Experience < ActiveRecord::Base
 
   before_save :defaults
 
-  default_scope {order('created_at DESC')}
+  default_scope {order('experiences.created_at DESC')}
 
   scope :from_locale, -> { where('locale = ?', I18n.locale.to_s) }
 

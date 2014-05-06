@@ -5,6 +5,7 @@ Psychlopedia::Application.routes.draw do
 
   get 'random', to: 'experiences#random'
   get 'search', to: 'experiences#search'
+  get 'categorias/:category', to: 'experiences#index', as: 'category'
 
   get 'about', to: 'infrastructure#about', path: 'que'
   get 'style', to: 'infrastructure#style', path: 'estilo'
