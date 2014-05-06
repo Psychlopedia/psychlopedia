@@ -667,3 +667,15 @@ span.category {
   padding:2px;
   border-radius:5px;
 }
+
+li.category {
+  display: inline;
+  font-weight: bold;
+  border: 1px solid black;
+  padding:5px;
+  margin-right:10px;
+}
+
+li.category.active {
+  border: 2px solid #C50184;
+}
