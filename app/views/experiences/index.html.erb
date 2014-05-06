@@ -9,16 +9,25 @@
       <%= submit_tag t('experiences.search') -%>
     <%- end -%>
   </div>
-  <% @experiences.each do |experience| -%>
-    <li class="experience">
-      <%= l(experience.created_at.to_date, format: :short).upcase -%>
-      <%= link_to truncate_and_titleize(experience.title), experience_path(experience), title: titleize(experience.title) -%>
-      <%= t('psychlopedia.misc.by') -%>
-      <%= experience.pseudonym -%>
-      <%= link_to t('experiences.comments_placeholder'), disqus_thread_url(experience), style: 'font-size: .8em;' -%>
-    </li>
-  <%- end -%>
-  <%= will_paginate @experiences, page_links: false -%>
+  <div class="categories">
+    <ul>
+      <%- Category.all.map(&:name).each do |category_name| -%>
+        <li><%= category_name %></li>
+      <%- end -%>
+    </ul>
+  </div>
+  <div>
+    <% @experiences.each do |experience| -%>
+      <li class="experience">
+        <%= l(experience.created_at.to_date, format: :short).upcase -%>
+        <%= link_to truncate_and_titleize(experience.title), experience_path(experience), title: titleize(experience.title) -%>
+        <%= t('psychlopedia.misc.by') -%>
+        <%= experience.pseudonym -%>
+        <%= link_to t('experiences.comments_placeholder'), disqus_thread_url(experience), style: 'font-size: .8em;' -%>
+      </li>
+    <%- end -%>
+    <%= will_paginate @experiences, page_links: false -%>
+  </div>
 <%- else -%>
   <div class="no-data">
     <p><%= t('experiences.no_data') -%></p>
