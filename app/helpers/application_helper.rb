@@ -13,4 +13,8 @@ module ApplicationHelper
       "#{naked_url}?locale=#{locale}"
     end
   end
+
+  def active_category?(category)
+    request.original_url =~ /#{category.slug}/
+  end
 end

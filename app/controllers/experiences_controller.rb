@@ -5,7 +5,14 @@ class ExperiencesController < ApplicationController
   before_action :set_title, only: [:index, :random, :new, :search]
 
   def index
-    @experiences = Experience.from_locale.paginate(page: params[:page])
+    if params[:category]
+      @experiences = Experience.includes(:categories)
+                               .where('categories.slug = ?', params[:category])
+                               .references(:categories)
+                               .paginate(page: params[:page])
+    else
+      @experiences = Experience.from_locale.paginate(page: params[:page])
+    end
   end
 
   def show
