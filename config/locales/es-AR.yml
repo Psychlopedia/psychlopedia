@@ -23,6 +23,7 @@ es-AR:
     new_title: Nueva
     show_title: '%{experience_title}'
     search_title: 'Resultados para: %{query}'
+    comments_placeholder: comentarios
     search: Buscar
     no_data: Uh, qué macana. Aún no tenemos experiencias.
     no_data_invitation: ¿Querés empezar por la tuya?

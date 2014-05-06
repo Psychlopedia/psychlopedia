@@ -44,6 +44,7 @@ en:
     new_title: New
     show_title: '%{experience_title}'
     search_title: 'Results for: %{query}'
+    comments_placeholder: comments
     search: Search
     no_data: Oh, snap. We currently have zero experiences.
     no_data_invitation: Would you like to start by sharing yours?
