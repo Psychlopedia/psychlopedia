@@ -75,7 +75,7 @@ class ExperiencesController < ApplicationController
     if params[:query]
       translated_title_for_action = t("experiences.#{action_name}_title", query: extract_and_sanitize_query)
     elsif action_name == 'show'
-      translated_title_for_action = t("experiences.#{action_name}_title", experience_title: @experience.title.split.map(&:upcase).join(' '))
+      translated_title_for_action = t("experiences.#{action_name}_title", experience_title: @experience.title.split.map(&:capitalize).join(' '))
     else
       translated_title_for_action = t("experiences.#{action_name}_title")
     end
