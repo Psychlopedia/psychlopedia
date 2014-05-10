@@ -333,6 +333,7 @@ span.self:hover {
 }
 
 div.etxt p {
+  text-align: justify;
   font-size: 1em;
   margin-bottom: 20px;
 }
