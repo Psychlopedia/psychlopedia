@@ -241,7 +241,7 @@ textarea, select, input, input[type="text"], input[type="password"], input[type=
   -webkit-border-radius: 2px;
   border-radius: 2px;
   font-size: .875em;
-  width: 300px;
+  width: 600px;
   max-width: 100%;
   display: block;
   margin-bottom: 20px;
@@ -339,10 +339,6 @@ div.etxt p {
 
 .etxt {
   width: 700px;
-}
-
-div.field textarea {
-  width: 600px;
 }
 
 div.miniguide {
@@ -444,10 +440,6 @@ div.extra {
   display: none;
 }
 
-div.extra input {
-  width: 175px;
-}
-
 div#experience {
   clear: both;
 }
@@ -479,7 +471,7 @@ div#experience textarea {
 
 div.search input[type="text"] {
   height: 15px;
-  width: 350px;
+  width: 85%;
   display: inline;
   padding-top: 4px;
   padding-bottom: 5px;
