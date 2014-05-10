@@ -337,8 +337,8 @@ div.etxt p {
   margin-bottom: 20px;
 }
 
-.etxt {
-  width: 700px;
+div.etxt {
+  width: 100%;
 }
 
 div.miniguide {
