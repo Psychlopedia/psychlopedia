@@ -45,7 +45,6 @@ class Experience < ActiveRecord::Base
   end
 
   def defaults
-    self.license = 'CC BY 4.0' if self.is_licensed
     self.publication_date = Date.today
   end
 

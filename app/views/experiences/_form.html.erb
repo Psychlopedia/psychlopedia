@@ -56,12 +56,6 @@
     <%= f.text_area :body, cols: 40, rows: 20, required: true -%>
   </div>
 
-  <div class="field license">
-    <%= f.check_box :is_licensed -%>
-    <%= t('experiences.addition.license_html',
-          link: link_to(t('experiences.addition.cc_license_type'), 'http://creativecommons.org/licenses/by/4.0/deed', target: '_blank')) -%>
-  </div>
-
   <%- if action_name == 'new' -%>
     <div class="field">
       <%= gotcha_error -%>

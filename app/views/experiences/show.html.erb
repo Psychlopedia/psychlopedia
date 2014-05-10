@@ -38,14 +38,6 @@
         <p><%= t('experiences.show.source') -%>: <%= @experience.source -%></p>
       </div>
     <%- end -%>
-    <% if @experience.is_licensed -%>
-      <div class="licensing">
-        <a rel="license" href="http://creativecommons.org/licenses/by/4.0/deed.es" target="_blank">
-          <img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png" />
-        </a>
-        <br>
-      </div>
-    <%- end -%>
     <hr>
     <div class="ratings">
       <%= form_for @experience do |f| -%>

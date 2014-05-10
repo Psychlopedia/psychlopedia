@@ -87,7 +87,7 @@ class ExperiencesController < ApplicationController
   end
 
   def experience_params
-    permitted = params.require(:experience).permit(:title, :pseudonym, :body, :set, :setting, :is_licensed, :locale,
+    permitted = params.require(:experience).permit(:title, :pseudonym, :body, :set, :setting, :locale,
                                                    cocktails_attributes: [:id, :substance, :dosage])
     permitted.delete_if { |key, value| value.blank? }
   end

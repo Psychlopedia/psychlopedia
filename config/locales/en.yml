@@ -62,8 +62,6 @@ en:
         setting: Setting
       submit: Save experience
       markdown_formatting_html: 'You can use <span class="emphasis">%{link}</span> to format your experiences.'
-      license_html: 'License under <span class="emphasis">%{link}</span>'
-      cc_license_type: 'Creative Commons International Attribution 4.0'
       set_setting_short_description: Set & Setting refers to the internal and external contexts of the experience.
       set_setting_long_description_html: "<span class='emphasis'>Set</span> is the state of mind an individual carries to the experience (i.e. thoughts, mood and expectations, among many other things). <span class='emphasis'>Setting</span> is the physical, social and emotional environment that surrounds the experience (i.e te weather, people's feelings about one another and dominant perspectives about what is real)."
     show:

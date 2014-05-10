@@ -617,17 +617,6 @@ div.set-and-setting p {
   margin-bottom: 20px;
 }
 
-div.license input {
-  display: inline;
-  margin-left: 2px;
-  width: 2%;
-  -ms-transform: scale(1.5, 1.5); /* IE */
-  -moz-transform: scale(1.5, 1.5); /* FF */
-  -webkit-transform: scale(1.5, 1.5); /* Safari and Chrome */
-  -o-transform: scale(1.5, 1.5); /* Opera */
-  padding: 10px;
-}
-
 div.disclaimer, div.privacy, div.about, div.styles {
   text-align: justify;
 }
