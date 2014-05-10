@@ -87,7 +87,7 @@ h1 {
 h1:hover {
   -webkit-animation: hover-change linear 4s infinite;
      -moz-animation: hover-change linear 4s infinite;
-  color: #30EF8E;
+  color: #30EFE7;
 }
 
 h2 {
@@ -132,21 +132,21 @@ nav a {
 @-webkit-keyframes hover-change {
   0%   {color: cyan;}
   25%  {color: magenta;}
-  50%  {color: #30EF8E;}
+  50%  {color: #30EFE7;}
   100% {color: white;}
 }
 
 @-moz-keyframes hover-change {
     0%   {color: cyan;}
     25%  {color: magenta;}
-    50%  {color: #30EF8E;}
+    50%  {color: #30EFE7;}
     100% {color: white;}
 }
 
 nav a:hover {
   -webkit-animation: hover-change linear 0.2s infinite;
   -moz-animation: hover-change linear 0.2s infinite;
-  border-bottom: 1px solid #30EF8E;
+  border-bottom: 1px solid #30EFE7;
 }
 
 nav a.what {
@@ -159,7 +159,7 @@ nav a.what {
 }
 
 nav a.what:hover {
-  border-bottom: 1px solid #30EF8E;
+  border-bottom: 1px solid #30EFE7;
 }
 
 #header {
@@ -293,15 +293,15 @@ li.experience a {
 }
 
 li.experience a:hover {
-  border-bottom: 1px solid #30EF8E;
+  border-bottom: 1px solid #30EFE7;
 }
 
 ::selection {
-  background: #30EF8E;
+  background: #30EFE7;
 }
 
 ::-moz-selection {
-  background: #30EF8E;
+  background: #30EFE7;
 }
 
 div.about {
@@ -329,7 +329,7 @@ span.emphasis {
 span.self:hover {
   -webkit-animation: hover-change linear 4s infinite;
   -moz-animation: hover-change linear 4s infinite;
-  color: #30EF8E;
+  color: #30EFE7;
 }
 
 div.etxt p {
@@ -358,7 +358,7 @@ div.miniguide h2 {
 }
 
 div.miniguide h2 a:hover {
-  color: #30EF8E;
+  color: #30EFE7;
 }
 
 ul.guide_goodies {
@@ -367,7 +367,7 @@ ul.guide_goodies {
 }
 
 ul.guide_goodies li a:hover {
-  border-bottom: 1px solid #30EF8E;
+  border-bottom: 1px solid #30EFE7;
 }
 
 nav a.guides {
@@ -414,7 +414,7 @@ p.notice {
   text-align: center;
   margin-bottom: 10px;
   font-weight: bold;
-  background-color: #30EF8E;
+  background-color: #30EFE7;
 }
 
 div.thingo > h1, h2 {
@@ -437,7 +437,7 @@ h2 {
 }
 
 .keep_reading:hover {
-  border-bottom: 1px solid #30EF8E;
+  border-bottom: 1px solid #30EFE7;
 }
 
 div.extra {
@@ -514,7 +514,7 @@ div.styles h3, h4 {
 }
 
 div.styles h3:hover {
-  color: #30EF8E;
+  color: #30EFE7;
 }
 
 div.disclaimer h3, h4 {
@@ -523,7 +523,7 @@ div.disclaimer h3, h4 {
 }
 
 div.disclaimer h3:hover {
-  color: #30EF8E;
+  color: #30EFE7;
 }
 
 div.privacy h3, h4 {
@@ -532,7 +532,7 @@ div.privacy h3, h4 {
 }
 
 div.privacy h3:hover {
-  color: #30EF8E;
+  color: #30EFE7;
 }
 
 div.styles table {
@@ -578,7 +578,7 @@ div.pagination :not(.disabled) {
 }
 
 div.pagination :not(.disabled):hover {
-  border: 1px solid #30EF8E;
+  border: 1px solid #30EFE7;
 }
 
 .footnotes a {
