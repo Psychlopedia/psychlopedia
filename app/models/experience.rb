@@ -47,44 +47,4 @@ class Experience < ActiveRecord::Base
   def defaults
     self.publication_date = Date.today
   end
-
-  def numeric_rating
-    total_n_of_reviews = []
-
-    weight_dot_n_reviews = self.hearts.inject([]) do |weights, (rating, amount)|
-      total_n_of_reviews << amount
-      weights << (rating * amount).to_f
-    end
-
-    if total_n_of_reviews.sum.zero?
-      return 0.0
-    else
-      result = (weight_dot_n_reviews.sum / total_n_of_reviews.sum)
-      result.round(2)
-    end
-  end
-
-  def human_readable_rating
-    if self.hearts.empty?
-      ('&#9734;' * N_STAR_RATING).html_safe
-    else
-      (black_stars + white_stars).html_safe
-    end
-  end
-
-  def calculate_black_stars
-    numeric_rating.round
-  end
-
-  def black_stars
-    ('&#9733;' * calculate_black_stars)
-  end
-
-  def calculate_white_stars
-    (N_STAR_RATING - calculate_black_stars)
-  end
-
-  def white_stars
-    ('&#9734;' * calculate_white_stars)
-  end
 end

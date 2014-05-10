@@ -375,10 +375,6 @@ div.about > p {
   line-height: 1.25;
 }
 
-div.ratings form {
-  margin-bottom: -15px;
-}
-
 div.source {
   margin-bottom: 20px;
   font-size: .9em;
@@ -387,20 +383,6 @@ div.source {
 
 div.licensing {
   margin-bottom: 20px;
-}
-
-div.ratings input[type="number"] {
-  height: 15px;
-  width: 35px;
-  display: inline;
-  padding-top: 4px;
-  padding-bottom: 5px;
-}
-
-div.ratings input[type="submit"] {
-  display: inline;
-  height: 25px;
-  width: 80px;
 }
 
 p.notice {

@@ -10,7 +10,6 @@
       <h1 class="title" title="<%= titleize(@experience.title) -%>">
         <span class="self"><%= truncate_and_titleize(@experience.title) -%></span>
       </h1>
-      <h2 title="<%= @experience.numeric_rating -%>"><%= @experience.human_readable_rating -%></h2>
     </div>
     <h3 class="whoandwhen">
       <%= t('psychlopedia.misc.by') -%>
@@ -39,13 +38,6 @@
       </div>
     <%- end -%>
     <hr>
-    <div class="ratings">
-      <%= form_for @experience do |f| -%>
-        <%= f.label :hearts, t('experiences.show.rate_experience') -%>:
-        <%= f.number_field :hearts, value: String.new, min: 1, max: 5, required: true -%>
-        <%= f.submit t('experiences.show.submit_rate') -%>
-      <%- end -%>
-    </div>
     <div id="comments">
       <div id="disqus_thread"></div>
       <script type="text/javascript">

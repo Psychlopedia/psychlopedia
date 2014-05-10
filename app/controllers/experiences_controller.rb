@@ -17,14 +17,10 @@ class ExperiencesController < ApplicationController
   end
 
   def update
-    if params[:experience][:hearts].present?
-      rate_experience(params[:experience][:hearts])
+    if logged_in? && @experience.update(experience_params)
+      redirect_to @experience, notice: t('experiences.show.admin.update_successful')
     else
-      if logged_in? && @experience.update(experience_params)
-        redirect_to @experience, notice: t('experiences.show.admin.update_successful')
-      else
-        render action: 'edit'
-      end
+      render action: 'edit'
     end
   end
 
@@ -92,41 +88,7 @@ class ExperiencesController < ApplicationController
     permitted.delete_if { |key, value| value.blank? }
   end
 
-  def has_permission_to_vote
-    # ignore normal updates. this is fucking ugly, man.
-    return true if params[:experience][:hearts].blank?
-
-    unless cookies.signed[:votes_left].present?
-      cookies.signed[:votes_left] = { value: 5, expires: 24.hours.from_now }
-    end
-
-    available_votes = cookies.signed[:votes_left]
-
-    if !available_votes.zero? && available_votes <= 5
-      cookies.signed[:votes_left] -= 1
-      return true
-    else
-      redirect_to experiences_path, notice: t('experiences.show.rate_limit_reached')
-    end
-  end
-
   def check_admin
     redirect_to experiences_path unless logged_in?
-  end
-
-  def rate_experience(rating)
-    rating = rating.to_i
-
-    if @experience.hearts[rating].blank?
-      @experience.hearts[rating] = 1
-    else
-      @experience.hearts[rating] += 1
-    end
-
-    if @experience.save
-      redirect_to @experience, notice: t('experiences.show.rate_successful')
-    else
-      render action: 'edit'
-    end
   end
 end

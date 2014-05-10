@@ -4,9 +4,6 @@
       <h1 class="title" title="<%= titleize(@experience.title)-%>">
         <%= truncate_and_titleize(@experience.title) -%>
       </h1>
-      <h2 title="<%= @experience.numeric_rating -%>">
-        <%= @experience.human_readable_rating -%>
-      </h2>
     </div>
     <h3 class="whoandwhen"><%= t('psychlopedia.misc.by') -%> <%= @experience.pseudonym -%></h3>
     <div class="etxt">
