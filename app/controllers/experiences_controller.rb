@@ -2,7 +2,7 @@ class ExperiencesController < ApplicationController
   before_action :set_experience, only: [:show, :update, :edit, :destroy]
   before_action :check_admin, only: [:edit, :destroy]
   before_action :has_permission_to_vote, only: [:update]
-  before_action :set_title, only: [:index, :random, :new, :search]
+  before_action :set_title, only: [:index, :new, :search]
 
   def index
     @experiences = Experience.from_locale.paginate(page: params[:page])
@@ -22,11 +22,6 @@ class ExperiencesController < ApplicationController
     else
       render action: 'edit'
     end
-  end
-
-  def random
-    @experience = Experience.random
-    redirect_to experiences_url unless @experience.present?
   end
 
   def new

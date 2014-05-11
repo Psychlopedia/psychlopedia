@@ -32,7 +32,6 @@ en:
       question: "What is '%{gotcha}' backwards?"
   menu:
     experiences: Experiences
-    random: Random
     add: Add
     style_guide: Style Guide
     what_is_this: What is this?
@@ -40,7 +39,6 @@ en:
     privacy: Privacy
   experiences:
     index_title: Archive
-    random_title: Random
     new_title: New
     show_title: '%{experience_title}'
     search_title: 'Results for: %{query}'

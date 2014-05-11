@@ -1,5 +1,3 @@
-# encoding: utf-8
-
 class Experience < ActiveRecord::Base
   extend FriendlyId
 
@@ -25,11 +23,6 @@ class Experience < ActiveRecord::Base
   # will_paginate per-page limit
   def self.per_page
     15
-  end
-
-  def self.random
-    return Experience.none unless Experience.from_locale.exists?
-    Experience.find Experience.from_locale.ids.sample
   end
 
   # XXX: a poor's man (and a poor's mind) search engine.
