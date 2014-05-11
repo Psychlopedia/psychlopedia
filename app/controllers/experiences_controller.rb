@@ -43,8 +43,6 @@ class ExperiencesController < ApplicationController
     @results = Experience.search(@query)
   end
 
-  # administrative actions
-
   def edit
     @experience.cocktails.build if @experience.cocktails.empty?
   end
@@ -53,8 +51,6 @@ class ExperiencesController < ApplicationController
     @experience.destroy
     redirect_to admin_path
   end
-
-  # end of administrative actions
 
   private
 
