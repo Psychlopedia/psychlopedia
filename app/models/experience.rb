@@ -1,8 +1,6 @@
 class Experience < ActiveRecord::Base
   extend FriendlyId
 
-  N_STAR_RATING = 5
-
   has_many :cocktails, dependent: :destroy
   accepts_nested_attributes_for :cocktails, reject_if: lambda { |cocktail| cocktail[:substance].blank? && cocktail[:dosage].blank? }
 
@@ -14,16 +12,11 @@ class Experience < ActiveRecord::Base
 
   before_save :defaults
 
-  default_scope {order('created_at DESC')}
+  default_scope { order('created_at DESC') }
 
   scope :from_locale, -> { where('locale = ?', I18n.locale.to_s) }
 
   serialize :hearts, Hash
-
-  # will_paginate per-page limit
-  def self.per_page
-    15
-  end
 
   # XXX: a poor's man (and a poor's mind) search engine.
   def self.search(query)
@@ -39,5 +32,10 @@ class Experience < ActiveRecord::Base
 
   def defaults
     self.publication_date = Date.today
+  end
+
+  # will_paginate per-page limit
+  def self.per_page
+    15
   end
 end
