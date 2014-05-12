@@ -111,10 +111,23 @@ a {
   color: #333;
   outline: none;
   text-decoration: none;
+  -webkit-transition-property: color, text;
+  -webkit-transition-duration: .25s, .25s;
+  -webkit-transition-timing-function: linear, ease-in;
+  -moz-transition-property: color, text;
+  -moz-transition-duration: .25s;
+  -moz-transition-timing-function: linear, ease-in;
+  -o-transition-property: color, text;
+  -o-transition-duration: .25s;
+  -o-transition-timing-function: linear, ease-in;
 }
 
 div.about a {
   border-bottom: 1px solid black;
+}
+
+div.about a:hover {
+  border-bottom: 1px solid #30EFE7;
 }
 
 nav a {
@@ -125,8 +138,6 @@ nav a {
   margin: 2px auto;
   padding: 5px;
   text-decoration: none;
-  -webkit-transition : all 0.15s linear;
-   -moz-transition : all 0.15s linear;
 }
 
 @-webkit-keyframes hover-change {
