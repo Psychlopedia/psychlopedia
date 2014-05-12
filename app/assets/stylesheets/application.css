@@ -320,11 +320,12 @@ div.about {
 }
 
 a.create {
+  border-bottom: 1px solid transparent;
   font-weight: bold;
 }
 
 a.create:hover {
-  border-bottom: 1px solid #FF00CC;
+  border-bottom: 1px solid #ef306d;
 }
 
 .no-data {
@@ -443,6 +444,10 @@ span.enrichment {
   border-bottom: 1px solid black;
   cursor: pointer;
   margin-bottom: 15px;
+}
+
+span.enrichment:hover {
+  border-bottom: 1px solid #ef306d;
 }
 
 div#experience textarea {
