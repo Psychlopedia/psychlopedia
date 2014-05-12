@@ -16,8 +16,6 @@ gem 'thread_safe'
 gem 'pry'
 gem 'pry-nav'
 
-gem 'skylight'
-
 group :development, :test do
   gem 'rspec-rails'
   gem 'thin'
