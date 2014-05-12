@@ -11,7 +11,7 @@ es-AR:
       question: "¿Qué es '%{gotcha}' al revés?"
   menu:
     experiences: Experiencias
-    add: Agregá una
+    add: Agregá
     style_guide: Guía de Estilo
     what_is_this: ¿Qué es esto?
     legal: Legal

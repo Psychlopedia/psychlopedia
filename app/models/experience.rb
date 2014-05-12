@@ -14,8 +14,6 @@ class Experience < ActiveRecord::Base
 
   default_scope { order('created_at DESC') }
 
-  scope :from_locale, -> { where('locale = ?', I18n.locale.to_s) }
-
   serialize :hearts, Hash
 
   # XXX: a poor's man (and a poor's mind) search engine.
@@ -23,7 +21,7 @@ class Experience < ActiveRecord::Base
     @results = []
     ["%#{query}", "%#{query}%", "#{query}%"].each do |query|
       ["title", "pseudonym"].each do |field|
-        candidates = Experience.from_locale.where("LOWER(#{field}) LIKE ?", query)
+        candidates = Experience.where("LOWER(#{field}) LIKE ?", query)
         candidates.each { |candidate| @results << candidate } unless candidates.empty?
       end
     end
