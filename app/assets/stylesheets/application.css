@@ -605,6 +605,10 @@ div.privacy a {
   border-bottom: 1px solid black;
 }
 
+div.privacy a:hover {
+  border-bottom: 1px solid #30EFB2;
+}
+
 .anon-links {
   font-weight: bold;
 }
