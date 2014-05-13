@@ -1,1 +1,14 @@
-Acá es la cosa.
+<%- if @results -%>
+  <% @results.each do |experience| -%>
+    <li class="experience">
+      <%= l(experience.created_at.to_date) -%>
+      <%= link_to (truncate(titleize(experience.title), length: 45, omission: '...')), experience_path(experience), title: titleize(experience.title) -%>
+      <%= t('psychlopedia.misc.by') -%>
+      <%= experience.pseudonym -%>
+    </li>
+  <%- end -%>
+<%- else -%>
+  <div class="no-results">
+    <p>Lamentablemente aún no tenemos experiencias en esta categoría.</p>
+  </div>
+<%- end -%>
