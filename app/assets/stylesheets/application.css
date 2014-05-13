@@ -555,6 +555,10 @@ div.styles a {
   border-bottom: 1px solid black;
 }
 
+div.styles a:hover {
+  border-bottom: 1px solid #30EFB2;
+}
+
 li.logo {
   margin-bottom: 20px;
 }
