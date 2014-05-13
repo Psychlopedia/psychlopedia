@@ -2,19 +2,13 @@ class ExperiencesController < ApplicationController
   before_action :set_experience, only: [:show, :update, :edit, :destroy]
   before_action :check_admin, only: [:edit, :destroy]
   before_action :has_permission_to_vote, only: [:update]
-  before_action :set_title, only: [:index, :new, :search]
+  before_action :set_title, only: [:index, :new, :show, :search]
 
   def index
     @experiences = Experience.approved.paginate(page: params[:page])
   end
 
-  def show
-    if @experience.respond_to? :none?
-      redirect_to experiences_path, notice: t('experiences.show.available_experiences')
-    else
-      set_title
-    end
-  end
+  def show; end
 
   def update
     if logged_in? && @experience.update(experience_params)
@@ -32,7 +26,7 @@ class ExperiencesController < ApplicationController
   def create
     @experience = Experience.new(experience_params)
     if gotcha_valid? && @experience.save
-      redirect_to experience_path @experience
+      redirect_to experiences_path
     else
       render :new
     end
