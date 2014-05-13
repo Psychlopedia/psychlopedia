@@ -48,6 +48,7 @@ en:
     no_data_invitation: Would you like to start by sharing yours?
     waiting_for_approval: Thanks! In a few moments we'll approve your experience and it'll be accesible to everyone.
     addition:
+      disclaimer: Remember that this experience will go through a fast process of approval before it publicly appears on Psychlopedia.
       title: Title
       pseudonym: Pseudonym
       body: Tell us your experience

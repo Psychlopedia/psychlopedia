@@ -27,6 +27,7 @@ es-AR:
     no_data_invitation: ¿Querés empezar por la tuya?
     waiting_for_approval: ¡Gracias! En unos momentos aprobaremos tu experiencia y podrá ser accedida públicamente.
     addition:
+      disclaimer: Recordá que esta experiencia tendrá que ser aprobada antes de ser publicada en Psychlopedia.
       title: Título
       pseudonym: Pseudónimo
       body: Contanos tu experiencia
