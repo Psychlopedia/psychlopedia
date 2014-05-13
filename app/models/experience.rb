@@ -23,7 +23,7 @@ class Experience < ActiveRecord::Base
     @results = []
     ["%#{query}", "%#{query}%", "#{query}%"].each do |query|
       ["title", "pseudonym"].each do |field|
-        candidates = Experience.where("LOWER(#{field}) LIKE ?", query)
+        candidates = Experience.approved.where("LOWER(#{field}) LIKE ?", query)
         candidates.each { |candidate| @results << candidate } unless candidates.empty?
       end
     end

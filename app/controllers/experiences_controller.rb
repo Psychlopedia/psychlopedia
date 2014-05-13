@@ -5,7 +5,7 @@ class ExperiencesController < ApplicationController
   before_action :set_title, only: [:index, :new, :search]
 
   def index
-    @experiences = Experience.paginate(page: params[:page])
+    @experiences = Experience.approved.paginate(page: params[:page])
   end
 
   def show
@@ -55,7 +55,7 @@ class ExperiencesController < ApplicationController
   private
 
   def set_experience
-    @experience = Experience.friendly.find(params[:id]) rescue Experience.none
+    @experience = Experience.friendly.approved.find(params[:id]) rescue Experience.none
   end
 
   def set_title
