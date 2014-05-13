@@ -26,7 +26,7 @@ class ExperiencesController < ApplicationController
   def create
     @experience = Experience.new(experience_params)
     if gotcha_valid? && @experience.save
-      redirect_to experiences_path
+      redirect_to experiences_path, notice: t('experiences.waiting_for_approval')
     else
       render :new
     end

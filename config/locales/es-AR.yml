@@ -25,6 +25,7 @@ es-AR:
     search: Buscar
     no_data: Uh, qué macana. Aún no tenemos experiencias.
     no_data_invitation: ¿Querés empezar por la tuya?
+    waiting_for_approval: ¡Gracias! En unos momentos aprobaremos tu experiencia y podrá ser accedida públicamente.
     addition:
       title: Título
       pseudonym: Pseudónimo

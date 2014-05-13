@@ -46,6 +46,7 @@ en:
     search: Search
     no_data: Oh, snap. We currently have zero experiences.
     no_data_invitation: Would you like to start by sharing yours?
+    waiting_for_approval: Thanks! In a few moments we'll approve your experience and it'll be accesible to everyone.
     addition:
       title: Title
       pseudonym: Pseudonym
