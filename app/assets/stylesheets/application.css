@@ -647,3 +647,8 @@ div.snippet > a {
 li.search-result {
   margin-bottom: 20px;
 }
+
+p.new-disclaimer {
+  margin-bottom: 20px;
+  color: grey;
+}
