@@ -14,6 +14,8 @@ class Experience < ActiveRecord::Base
 
   default_scope { order('created_at DESC') }
 
+  scope :approved, -> { where(is_approved: true) }
+
   serialize :hearts, Hash
 
   # XXX: a poor's man (and a poor's mind) search engine.
@@ -35,5 +37,10 @@ class Experience < ActiveRecord::Base
   # will_paginate per-page limit
   def self.per_page
     15
+  end
+
+  def approve
+    self.is_approved = true
+    save
   end
 end
