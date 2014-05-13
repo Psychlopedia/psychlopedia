@@ -38,7 +38,7 @@ class ExperiencesController < ApplicationController
   end
 
   def on_category
-    @results = Category.find_or_create_by(name: params[:name]).experiences
+    @results = Category.find_or_create_by(name: params[:category]).experiences
     render :categories
   end
 
