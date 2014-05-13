@@ -4,6 +4,7 @@ Psychlopedia::Application.routes.draw do
   end
 
   get 'search', to: 'experiences#search'
+  get 'on/:category', to: 'experiences#on_category', as: 'category', path: 'en/:category'
 
   get 'about', to: 'infrastructure#about', path: 'que'
   get 'style', to: 'infrastructure#style', path: 'estilo'

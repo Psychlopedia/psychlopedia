@@ -16,6 +16,16 @@
       <%= @experience.pseudonym -%> &#8669;
       <%= l @experience.created_at.to_date, format: :long -%>
     </h3>
+    <h4>
+      <div class="categories">
+        <%- unless @experience.categories.empty? -%>
+        <p>Categorías: </p>
+          <%- @experience.categories_used.each do |category| -%>
+          <span class="category"><%= link_to category, category_path(category) -%></span>
+          <%- end -%>
+        <%- end -%>
+      </div>
+    </h4>
     <div style="margin-bottom:20px;">
       <%- if @experience.cocktails.present? -%>
         <%- @cocktail = @experience.cocktails.first -%>

@@ -37,6 +37,11 @@ class ExperiencesController < ApplicationController
     @results = Experience.search(@query)
   end
 
+  def on_category
+    @experiences = Category.find_or_create_by(name: params[:name]).experiences
+    render :categories
+  end
+
   def edit
     @experience.cocktails.build if @experience.cocktails.empty?
   end
