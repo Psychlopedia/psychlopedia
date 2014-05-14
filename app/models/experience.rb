@@ -8,6 +8,7 @@ class Experience < ActiveRecord::Base
   accepts_nested_attributes_for :cocktails, reject_if: lambda { |cocktail| cocktail[:substance].blank? && cocktail[:dosage].blank? }
 
   friendly_id :title, use: :slugged
+  is_impressionable
 
   validates :pseudonym, presence: true, length: { maximum: 25 }
   validates :title, presence: true

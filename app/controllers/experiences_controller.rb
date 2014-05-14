@@ -8,7 +8,9 @@ class ExperiencesController < ApplicationController
     @experiences = Experience.approved.paginate(page: params[:page])
   end
 
-  def show; end
+  def show
+    impressionist(@experience)
+  end
 
   def update
     if logged_in? && @experience.update(experience_params)
