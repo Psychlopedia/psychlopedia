@@ -13,8 +13,6 @@ module ExperiencesHelper
   end
 
   def disqus_thread_url(experience)
-    naked_url = experience_path(experience).split('?').first
-    disqus_thread_url = "#{naked_url}#disqus_thread"
-    disqus_thread_url
+    experience_path(experience) + '#disqus_thread'
   end
 end
