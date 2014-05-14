@@ -141,22 +141,34 @@ nav a {
 }
 
 @-webkit-keyframes hover-change {
-  0%   {color: cyan;}
-  25%  {color: magenta;}
-  50%  {color: #30EFB2;}
-  100% {color: white;}
+  0%   {color: #30efb2;}
+  20%  {color: #30ccef;}
+  40%  {color: #b230ef;}
+  60%  {color: #efb230;}
+  80%  {color: #30ef53;}
+  100% {color: #ef306d;}
+  //0%   {color: cyan;}
+  //25%  {color: magenta;}
+  //50%  {color: #30EFB2;}
+  //100% {color: white;}
 }
 
 @-moz-keyframes hover-change {
-    0%   {color: cyan;}
-    25%  {color: magenta;}
-    50%  {color: #30EFB2;}
-    100% {color: white;}
+  0%   {color: #30efb2;}
+  20%  {color: #30ccef;}
+  40%  {color: #b230ef;}
+  60%  {color: #efb230;}
+  80%  {color: #30ef53;}
+  100% {color: #ef306d;}
+  //0%   {color: cyan;}
+  //25%  {color: magenta;}
+  //50%  {color: #30EFB2;}
+  //100% {color: white;}
 }
 
 nav a:hover {
-  -webkit-animation: hover-change linear 0.2s infinite;
-  -moz-animation: hover-change linear 0.2s infinite;
+  -webkit-animation: hover-change linear 0.4s infinite;
+  -moz-animation: hover-change linear 0.4s infinite;
   border-bottom: 1px solid #30EFB2;
 }
 
@@ -339,8 +351,8 @@ span.emphasis {
 }
 
 span.self:hover {
-  -webkit-animation: hover-change linear 4s infinite;
-  -moz-animation: hover-change linear 4s infinite;
+  -webkit-animation: hover-change linear 3s infinite;
+  -moz-animation: hover-change linear 3s infinite;
   color: #30EFB2;
 }
 
