@@ -20,8 +20,6 @@ class Experience < ActiveRecord::Base
 
   scope :approved, -> { where(is_approved: true) }
 
-  serialize :hearts, Hash
-
   # XXX: a poor's man (and a poor's mind) search engine.
   def self.search(query)
     @results = []
