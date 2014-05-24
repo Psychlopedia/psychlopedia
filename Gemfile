@@ -18,8 +18,10 @@ gem 'uglifier', '>= 1.3.0'
 gem 'will_paginate'
 
 group :development, :test do
-  gem 'rspec-rails'
+  gem 'database_cleaner'
+  gem 'guard-rspec'
   gem 'thin'
+  gem 'rspec-rails'
 end
 
 group :production do
